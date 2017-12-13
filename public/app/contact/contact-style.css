@@ -1,0 +1,115 @@
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.contact {
+    text-align: center;
+}
+
+.contact h1 {
+    font-size: 35px;
+    font-weight: 700;
+    padding: 40px 0 30px 0;
+}
+
+.contact p {
+    max-width: 600px;
+    font-size: 16px;
+    padding: 10px;
+}
+
+/*Contact form style*/
+
+form {
+    background: #F9F9F9;
+    padding: 25px;
+    margin: 30px 0;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+fieldset {
+    margin: 0 0 10px;
+    min-width: 100%;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="tel"],
+form input[type="url"],
+form textarea {
+    width: 100%;
+    border: 1px solid #ccc;
+    background: #FFF;
+    margin: 0 0 5px;
+    padding: 10px 0 10px 10px;
+}
+
+form input[type="text"]:hover,
+form input[type="email"]:hover,
+form input[type="tel"]:hover,
+form input[type="url"]:hover,
+form textarea:hover {
+    -webkit-transition: border-color 0.3s ease-in-out;
+    -moz-transition: border-color 0.3s ease-in-out;
+    transition: border-color 0.3s ease-in-out;
+    border: 1px solid #aaa;
+}
+
+form textarea {
+    height: 100px;
+    max-width: 100%;
+    resize: none;
+}
+
+form button[type="submit"] {
+    cursor: pointer;
+    width: 100%;
+    border: none;
+    background: #4CAF50;
+    color: #FFF;
+    margin: 0 0 5px;
+    padding: 10px;
+    font-size: 15px;
+}
+
+form button[type="submit"]:hover {
+    background: #43A047;
+    -webkit-transition: background 0.3s ease-in-out;
+    -moz-transition: background 0.3s ease-in-out;
+    transition: background-color 0.3s ease-in-out;
+}
+
+form button[type="submit"]:active {
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+form input:focus, form textarea:focus {
+    outline: 0;
+    border: 1px solid #aaa;
+}
+
+::-webkit-input-placeholder {
+    color: #888;
+}
+
+:-moz-placeholder {
+    color: #888;
+}
+
+::-moz-placeholder {
+    color: #888;
+}
+
+:-ms-input-placeholder {
+    color: #888;
+}
+
+/*Google map*/
+
+#map {
+    width: 100%;
+    height: 500px;
+}

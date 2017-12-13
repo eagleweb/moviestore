@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <title>Movie Store App</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css">
+    <link rel="stylesheet" href="../../assets/css/main-style.css">
+    <link rel="stylesheet" href="./web-app-style.css">
+</head>
+<body>
+<div class="wrapper">
+    <header class="header">
+        <div class="header-logo">
+            <a href="../index.html"><img src="../../assets/img/logo.png" alt="Movie Store"></a>
+        </div>
+        <nav>
+            <ul class="header-menu">
+                <li class="header-menu_item item_movie"><a href="#">Movies</a>
+                    <ul class="header-menu_submenu">
+                        <li><a href="#">Adventure</a></li>
+                        <li><a href="#">Adventure</a></li>
+                        <li><a href="#">Adventure</a></li>
+                    </ul>
+                </li>
+                <li class="header-menu_item item_animation"><a href="#">Animation</a>
+                    <ul class="header-menu_submenu">
+                        <li><a href="#">Adventure</a></li>
+                        <li><a href="#">Adventure</a></li>
+                        <li><a href="#">Adventure</a></li>
+                    </ul>
+                </li>
+                <li class="header-menu_item item_documentary"><a href="#">Documentary</a>
+                    <ul class="header-menu_submenu">
+                        <li><a href="#">Adventure</a></li>
+                        <li><a href="#">Adventure</a></li>
+                        <li><a href="#">Adventure</a></li>
+                    </ul>
+                </li>
+                <li class="header-menu_item item_tvshow"><a href="#">TV Shows</a>
+                    <ul class="header-menu_submenu">
+                        <li><a href="#">Adventure</a></li>
+                        <li><a href="#">Adventure</a></li>
+                        <li><a href="#">Adventure</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <div class="header-user">
+            <div class="header-user_photo"><img src="../../assets/img/profile-photo.png" alt=""></div>
+            <div class="header-user_name">Carol Danvers</div>
+            <div class="header-user_icon"></div>
+        </div>
+    </header>
+    <main class="container">
+        <div class="filter-position">
+            <div class="filter">
+                <div class="filter-title">Choose filter:</div>
+                <div >
+                    <ul>
+                        <li class="filter-item">Ganre
+                            <ul>
+                                <li class="filter-subitem"><label><input type="checkbox">Advanture</label></li>
+                                <li class="filter-subitem"><label><input type="checkbox">Advanture</label></li>
+                                <li class="filter-subitem"><label><input type="checkbox">Advanture</label></li>
+                                <li class="filter-subitem"><label><input type="checkbox">Advanture</label></li>
+                                <li class="filter-subitem"><label><input type="checkbox">Advanture</label></li>
+                            </ul>
+                        </li>
+                        <li class="filter-item">Year
+                            <ul>
+                                <li class="filter-subitem"><label><input type="checkbox">2017</label></li>
+                                <li class="filter-subitem"><label><input type="checkbox">2016</label></li>
+                                <li class="filter-subitem"><label><input type="checkbox">2015</label></li>
+                                <li class="filter-subitem"><label><input type="checkbox">2014</label></li>
+                                <li class="filter-subitem"><label><input type="checkbox">2010-2013</label></li>
+                                <li class="filter-subitem"><label><input type="checkbox">2000-2010</label></li>
+                                <li class="filter-subitem"><label><input type="checkbox">1990-2000</label></li>
+                                <li class="filter-subitem"><label><input type="checkbox">Older</label></li>
+                            </ul>
+                        </li>
+                        <li class="filter-item">Country
+                            <ul>
+                                <li class="filter-subitem"><label><input type="checkbox">USA</label></li>
+                                <li class="filter-subitem"><label><input type="checkbox">France</label></li>
+                                <li class="filter-subitem"><label><input type="checkbox">Italy</label></li>
+                                <li class="filter-subitem"><label><input type="checkbox">Germany</label></li>
+                                <li class="filter-subitem"><label><input type="checkbox">Spain</label></li>
+                                <li class="filter-subitem"><label><input type="checkbox">Ukraine</label></li>
+                                <li class="filter-subitem"><label><input type="checkbox">Japan</label></li>
+                                <li class="filter-subitem"><label><input type="checkbox">India</label></li>
+                                <li class="filter-subitem"><label><input type="checkbox">Australia</label></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <button class="filter-button">Filter</button>
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <div class="search-row">
+                <div class="search">
+                    <input type="text" placeholder="Search movie">
+                </div>
+                <div class="breadcrumbs">Movies / Adventure</div>
+                <div class="sort">
+                    <div class="tooltip">Popular
+                        <span class="tooltip-text">Sort by popular</span>
+                    </div>
+                    <div class="tooltip">Last
+                        <span class="tooltip-text">Last added</span>
+                    </div>
+                    <div class="tooltip">Soon
+                        <span class="tooltip-text">Soon in cinema</span>
+                    </div>
+                </div>
+            </div>
+            <div class="content-block"></div>
+            <div class="pagination">
+                <a href="#">&laquo;</a>
+                <a href="#">1</a>
+                <a href="#" class="active">2</a>
+                <a href="#">3</a>
+                <a href="#">4</a>
+                <a href="#">5</a>
+                <a href="#">6</a>
+                <a href="#">&raquo;</a>
+            </div>
+        </div>
+    </main>
+    <!--<footer>-->
+        <!--<div class="footer-menu">-->
+            <!--<ul>-->
+                <!--<li><a href="#">About</a></li>-->
+                <!--<li><a href="#">Contact</a></li>-->
+                <!--<li><a href="#">Terms and Conditions</a></li>-->
+            <!--</ul>-->
+        <!--</div>-->
+        <!--<div class="footer-logo"><img src="../../assets/img/logo-footer.png" alt="Movie Store"></div>-->
+    <!--</footer>-->
+</div>
+</body>
+</html>
