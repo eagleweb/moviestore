@@ -36,6 +36,7 @@
     display: inline-block;
     position: relative;
     border-right: 1px solid #a8aaaf;
+    cursor: pointer;
 }
 
 .header-menu li:last-child {
@@ -66,7 +67,6 @@
     margin: 0 3px;
     left: 0;
     top: 3px;
-    cursor: pointer;
     position: relative;
     display: inline-block;
 }

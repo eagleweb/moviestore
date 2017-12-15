@@ -1,21 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="movie-store">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <title>Movie Store</title>
+    <base href="/app/public/app/">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css">
     <link rel="stylesheet" href="../assets/css/slick.css">
     <link rel="stylesheet" href="../assets/css/main-style.css">
+    <link rel="stylesheet" href="./web-app/web-app-style.css">
 </head>
 <body>
-    <div class="wrapper">
-        <header class="header">
-            <div class="header-logo"><a href="#"><img src="../assets/img/logo.png" alt="Movie Store"></a></div>
+    <div class="wrapper" ng-controller="RootCtrl as root">
+        <header class="header" ng-class="{'header-fixed': !root.page()}">
+            <div class="header-logo"><a ui-sref="home"><img src="../assets/img/logo.png" alt="Movie Store"></a></div>
             <nav>
                 <ul class="header-menu">
-                    <li class="header-menu_item item_movie"><a href="#">Movies</a>
+                    <li class="header-menu_item item_movie"><a ui-sref="category({type: 'movie', genre: 'All'})">Movies</a>
                         <ul class="header-menu_submenu">
                             <li><a href="#">Adventure</a></li>
                             <li><a href="#">Adventure</a></li>
@@ -51,55 +53,8 @@
                 <div class="header-user_icon"></div>
             </div>
         </header>
-        <main>
-            <div class="main-slider">
-                <div class="slide">
-                    <img src="../assets/img/slider/slide1.jpg" alt="">
-                    <div class="slide_text">
-                        <div class="slide_info">Published <span>Feb 24, 2017</span></div>
-                        <div class="slide_info">Rating <span>8.5</span></div>
-                        <div class="elem_position slide_download">564</div>
-                        <div class="elem_position slide_comments">21</div>
-                        <div class="elem_position slide_like">2,548</div>
-                    </div>
-                    <button class="watch_now">Watch now</button>
-                </div>
-                <div class="slide">
-                    <img src="../assets/img/slider/slide2.jpg" alt="">
-                    <div class="slide_text">
-                        <div class="slide_info">Published <span>Feb 20, 2017</span></div>
-                        <div class="slide_info">Rating <span>7.1</span></div>
-                        <div class="elem_position slide_download">487</div>
-                        <div class="elem_position slide_comments">14</div>
-                        <div class="elem_position slide_like">7,364</div>
-                    </div>
-                    <button class="watch_now">Watch now</button>
-                </div>
-                <div class="slide">
-                    <img src="../assets/img/slider/slide3.jpg" alt="">
-                    <div class="slide_text">
-                        <div class="slide_info">Published <span>Feb 20, 2017</span></div>
-                        <div class="slide_info">Rating <span>7.1</span></div>
-                        <div class="elem_position slide_download">487</div>
-                        <div class="elem_position slide_comments">14</div>
-                        <div class="elem_position slide_like">7,364</div>
-                    </div>
-                    <button class="watch_now">Watch now</button>
-                </div>
-            </div>
-            <div class="first-row">
-                    <h1>All the Movies You Need. Guaranteed.</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi culpa delectus, dicta ex impedit incidunt ipsam, iste labore nobis omnis placeat quidem unde vero! Aliquid consequatur est officia quo sed.</p>
-            </div>
-            <div class="partner-row">
-                <div class="partner_1"></div>
-                <div class="partner_2"></div>
-                <div class="partner_3"></div>
-                <div class="partner_4"></div>
-                <div class="partner_5"></div>
-            </div>
-        </main>
-        <footer>
+        <main ui-view="content" ng-class="{'main-fixed': !root.page()}"></main>
+        <footer ng-class="{'footer-none': !root.page()}">
             <div class="footer-menu">
                 <ul>
                     <li><a href="#">About</a></li>
@@ -110,8 +65,13 @@
             <div class="footer-logo"><img src="../assets/img/logo-footer.png" alt="Movie Store"></div>
         </footer>
     </div>
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <script src="../assets/js/slick.js"></script>
-    <script src="../assets/js/slick-slider.js"></script>
+    <script src="../../node_modules/angular/angular.js" defer></script>
+    <script src="../../node_modules/angular-ui-router/release/angular-ui-router.js" defer></script>
+    <script src="./app.js" defer></script>
+    <script src="./app.routes.js" defer></script>
+    <script src="./root.controller.js" defer></script>
+    <!--<script src="https://code.jquery.com/jquery-3.2.1.min.js" defer></script>-->
+    <!--<script src="../assets/js/slick.js" defer></script>-->
+    <!--<script src="../assets/js/slick-slider.js" defer></script>-->
 </body>
 </html>

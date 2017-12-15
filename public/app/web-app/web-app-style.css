@@ -1,4 +1,4 @@
-.header {
+.header-fixed {
     position: fixed;
     top: 0;
     left: 0;
@@ -7,12 +7,8 @@
     width: 100%;
 }
 
-main {
+.main-fixed {
     padding-top: 80px;
-}
-
-.footer-menu {
-    padding: 20px 0 20px 50px;
 }
 
 .container {
@@ -173,6 +169,10 @@ main {
 .pagination a:hover:not(.active) {
     background-color: #ddd;
     border-radius: 5px;
+}
+
+.footer-none {
+    display: none;
 }
 
 

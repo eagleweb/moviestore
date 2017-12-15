@@ -5,7 +5,7 @@ mongoosePaginate.paginate.options = {
 
 module.exports = {
     'port': process.env.PORT || 8080,
-    'database': '',
+    'database': 'mongodb://eagleweb:751803os@ds155529.mlab.com:55529/db-spa',
     'corsOptions': {
         origin: 'http://localhost:63342',
         preflightContinue: true,
