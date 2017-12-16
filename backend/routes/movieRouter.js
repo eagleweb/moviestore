@@ -7,7 +7,7 @@ var Movie = require('../models/movie');
 movieRouter.route('/')
     .get(function (req, res) {
 
-        if (req.query.genre === 'All') {
+        if (req.query.genre === 'all') {
             Movie.paginate({Type: req.query.type}, {page: +req.query.page, limit: 10}, function (err, result) {
                 if (err) res.send(err);
                 res.json(result);

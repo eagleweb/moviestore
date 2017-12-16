@@ -61,7 +61,13 @@
                 </div>
             </div>
         </div>
-        <div class="content-block"></div>
+        <div class="content-block">
+            <div ng-repeat="movies in movie.data">
+                <p><img ng-src="{{movies.Poster}}" width="250" height="395"></p>
+                <h4><a ng-bind="movies.Title" ui-sref="movie({ movie_id: movies._id })"></a></h4>
+                <p><span ng-bind="movies.Year"></span> | <span ng-bind="movies.Country"></span></p>
+            </div>
+        </div>
         <div class="pagination">
             <a href="#">&laquo;</a>
             <a href="#">1</a>

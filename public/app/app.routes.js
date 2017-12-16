@@ -11,18 +11,18 @@ angular
                     }
                 })
 
-                .state('category', {
+                .state('store', {
                     url: '/{type}/{genre}',
                     views: {
                         'content': {
-                            templateUrl: 'web-app/web-app.html'
-                            // controller: 'MovieCategoryCtrl',
-                            // controllerAs: 'category',
-                            // resolve: {
-                            //     categoryPrepService:  function(MovieService, $stateParams){
-                            //         return MovieService.getMoviesByType({type: $stateParams.type, genre: $stateParams.genre, page: 1});
-                            //     }
-                            // }
+                            templateUrl: 'web-app/web-app.html',
+                            controller: 'MovieCtrl',
+                            controllerAs: 'movie',
+                            resolve: {
+                                moviePrepService:  function(MovieService, $stateParams){
+                                    return MovieService.getMoviesByType({type: $stateParams.type, genre: $stateParams.genre, page: 1});
+                                }
+                            }
                         }
                     }
                 });

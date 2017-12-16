@@ -8,7 +8,7 @@ var morgan = require('morgan');
 var mongoose = require('mongoose');
 var jwt = require('express-jwt');
 var cors = require('cors');
-var movieRouter = require('./app/routes/movieRouter');
+var movieRouter = require('./backend/routes/movieRouter');
 // var userRouter = require('./app/routes/userRouter');
 // var watchlistRouter = require('./app/routes/watchlistRouter');
 
