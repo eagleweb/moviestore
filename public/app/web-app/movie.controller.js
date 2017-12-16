@@ -1,8 +1,8 @@
 angular
     .module('movie-store')
-    .controller('MovieCtrl', ['MovieService', 'moviePrepService', function (MovieService, moviePrepService){
+    .controller('MovieCtrl', ['$scope', 'MovieService', 'moviePrep', function ($scope, MovieService, moviePrep){
 
         var vm = this;
-            vm.data = moviePrepService;
+            vm.data = moviePrep;
 
     }]);

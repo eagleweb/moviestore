@@ -6,7 +6,7 @@ angular
                     url: '/',
                     views: {
                         'content': {
-                            templateUrl: 'main/home.html'
+                            template: "Hello"
                         }
                     }
                 })
@@ -15,11 +15,10 @@ angular
                     url: '/{type}/{genre}',
                     views: {
                         'content': {
-                            templateUrl: 'web-app/web-app.html',
-                            controller: 'MovieCtrl',
-                            controllerAs: 'movie',
+                            template: '123',
+                            controller: 'MovieCtrl as movie',
                             resolve: {
-                                moviePrepService:  function(MovieService, $stateParams){
+                                moviePrep:  function(MovieService, $stateParams){
                                     return MovieService.getMoviesByType({type: $stateParams.type, genre: $stateParams.genre, page: 1});
                                 }
                             }

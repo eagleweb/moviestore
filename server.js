@@ -32,17 +32,8 @@ app.use(morgan('dev'));
 //set static files location
 app.use(express.static(__dirname + '/public'));
 
-
 // ROUTES FOR API =====================================================
 
-//basic route for the home page
-app.get('/', function(req, res) {
-    res.send('Welcome to home page!');
-});
-
-//rest of routes
-
-//REGISTER ROUTES
 app.use('/api/data', movieRouter);
 // app.use('/api/users', jwtCheck);
 

@@ -10,6 +10,10 @@
     font-style: normal;
 }
 
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+    display: none;
+}
+
 .wrapper {
     font-family: AdobeGothicStd, sans-serif;
     display: flex;
@@ -60,6 +64,10 @@
 
 .header-menu_item{
     white-space: nowrap;
+}
+
+.header-menu .active{
+    color: #d8232a;
 }
 
 .header-menu_item:before {
