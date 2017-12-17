@@ -5,44 +5,49 @@ angular
                 .state('home', {
                     url: '/',
                     views: {
-                        'content': {
-                            template: "Hello"
+                        '': {
+                            templateUrl: 'app/main/home.html'
                         }
                     }
                 })
 
                 .state('store', {
                     url: '/{type}/{genre}',
+                    data: {
+                        displayName: '{{$stateParams.type | uppercase}} / {{$stateParams.genre | uppercase}}'
+                    },
                     views: {
-                        'content': {
-                            template: '123',
+                        '': {
+                            templateUrl: 'app/web-app/web-app.html',
                             controller: 'MovieCtrl as movie',
                             resolve: {
-                                moviePrep:  function(MovieService, $stateParams){
+                                moviesListData:  function(MovieService, $stateParams){
                                     return MovieService.getMoviesByType({type: $stateParams.type, genre: $stateParams.genre, page: 1});
                                 }
                             }
                         }
                     }
+                })
+
+                .state('movie', {
+                   url: '/{movie_id}',
+                   views: {
+                       '': {
+                           templateUrl: 'app/web-app/movie-info/movie-info.html',
+                           controller: 'MovieInfoCtrl as movie'
+                       }
+                   },
+                    resolve: {
+                        movieData:  function($stateParams, MovieService){
+                            return MovieService.getMovieByID({_id: $stateParams.movie_id});
+                        }
+                    },
+                    data: {
+                        displayName: '{{ movieData.Type | uppercase}} / {{ movieData.Title}}'
+                    }
                 });
 
-                // .state('movie', {
-                //    url: '/{movie_id}',
-                //    views: {
-                //        'content': {
-                //            templateUrl: 'movie/movie-info/movie-info.html',
-                //            controller: 'MovieInfoCtrl',
-                //            controllerAs: 'movie',
-                //            resolve: {
-                //                moviePrepService:  function($stateParams, MovieService){
-                //                    return MovieService.getMovieByID({_id: $stateParams.movie_id});
-                //                }
-                //            }
-                //        }
-                //    }
-                // });
-
             $locationProvider.html5Mode(true);
-            console.log("rout");
+
             $urlRouterProvider.otherwise('/');
         });

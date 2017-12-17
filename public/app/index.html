@@ -62,7 +62,9 @@
                 <div class="header-user_icon"></div>
             </div>
         </header>
-        <main ui-view="content" ng-class="{'main-fixed': !root.page()}" ng-cloak></main>
+        <main ng-class="{'main-fixed': !root.page()}" ng-cloak>
+            <div ui-view></div>
+        </main>
         <footer ng-class="{'footer-none': !root.page()}">
             <div class="footer-menu">
                 <ul>
@@ -79,8 +81,10 @@
     <script src="/app/app.js"></script>
     <script src="/app/app.routes.js"></script>
     <script src="/app/root.controller.js"></script>
-    <script src="/app/web-app/movie.service.js"></script>
-    <script src="/app/web-app/movie.controller.js"></script>
+    <script src="/app/web-app/movies.service.js"></script>
+    <script src="/app/web-app/movies.controller.js"></script>
+    <script src="/app/web-app/breadcrumbs/uiBreadcrumbs.js"></script>
+    <script src="/app/web-app/movie-info/movie-info.controller.js"></script>
     <!--<script src="https://code.jquery.com/jquery-3.2.1.min.js" defer></script>-->
     <!--<script src="../assets/js/slick.js" defer></script>-->
     <!--<script src="../assets/js/slick-slider.js" defer></script>-->

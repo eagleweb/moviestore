@@ -5,7 +5,6 @@ angular
         var vm = this;
 
         vm.page = function (){
-            console.log("root");
             return ('/' === $location.path())
         }
 

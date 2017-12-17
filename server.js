@@ -38,7 +38,7 @@ app.use('/api/data', movieRouter);
 // app.use('/api/users', jwtCheck);
 
 //SEND USERS TO FRONTEND
-app.get('*', function (req, res) {
+app.get('/*', function (req, res) {
     res.sendFile(path.join(__dirname + '/public/app/index.html'));
 });
 

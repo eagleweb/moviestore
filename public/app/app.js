@@ -1,2 +1,7 @@
 angular
-    .module('movie-store', ['ui.router']);
+    .module('movie-store', ['ui.router', 'angularUtils.directives.uiBreadcrumbs'])
+    .config(config);
+
+function config() {
+
+}
