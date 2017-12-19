@@ -8,7 +8,7 @@ userRouter.route('/:user_id')
 
     //get single user with id
     .get(function (req, res) {
-        User.findOne({user_id: req.params.user_id}, function(err, user) {
+        User.findById(req.params.user_id, function(err, user) {
             if (err) res.send(err);
             res.json(user);
         });

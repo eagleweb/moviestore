@@ -9,9 +9,8 @@ var mongoose = require('mongoose');
 var jwt = require('express-jwt');
 var cors = require('cors');
 var movieRouter = require('./backend/routes/movieRouter');
-// var userRouter = require('./app/routes/userRouter');
-// var watchlistRouter = require('./app/routes/watchlistRouter');
-
+var userRouter = require('./backend/routes/userRouter');
+var watchlistRouter = require('./backend/routes/watchlistRouter');
 var config = require('./config');
 var path = require('path');
 var helmet = require('helmet');
@@ -32,10 +31,17 @@ app.use(morgan('dev'));
 //set static files location
 app.use(express.static(__dirname + '/public'));
 
+//Authentication middleware
+var jwtCheck = jwt({
+    secret: 'CtcKAdGOhY9IBFasMrhU-pKN1NxH7sZh2W-fDtSwxtQAd8RWk_IJSpzSQ4kl1V7Y',
+    audience: 'Flci7tvkKL4MP0v02VYm3XEsaNExUG4e'
+});
+
 // ROUTES FOR API =====================================================
 
 app.use('/api/data', movieRouter);
-// app.use('/api/users', jwtCheck);
+app.use('/api/users', userRouter);
+app.use('/api/watchlist', watchlistRouter);
 
 //SEND USERS TO FRONTEND
 app.get('/*', function (req, res) {

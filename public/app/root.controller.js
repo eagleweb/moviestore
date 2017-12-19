@@ -1,11 +1,11 @@
 angular
     .module('movie-store')
-    .controller('RootCtrl', ['$location', function ($location){
+    .controller('RootCtrl', ['$state', function ($state){
 
         var vm = this;
 
         vm.page = function (){
-            return ('/' === $location.path())
+            return ($state.is('store') || $state.is('movie'));
         }
 
     }]);

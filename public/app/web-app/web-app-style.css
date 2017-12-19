@@ -11,7 +11,7 @@
     padding-top: 80px;
 }
 
-.container {
+.movie-container {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;

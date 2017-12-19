@@ -1,64 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <title>Profile</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css">
-    <link rel="stylesheet" href="../../assets/css/main-style.css">
-    <link rel="stylesheet" href="./profile-style.css">
-</head>
-<body>
-<div class="wrapper">
-    <header class="header">
-        <div class="header-logo"><a href="#"><img src="../../assets/img/logo.png" alt="Movie Store"></a></div>
-        <nav>
-            <ul class="header-menu">
-                <li class="header-menu_item item_movie"><a href="#">Movies</a>
-                    <ul class="header-menu_submenu">
-                        <li><a href="#">Adventure</a></li>
-                        <li><a href="#">Adventure</a></li>
-                        <li><a href="#">Adventure</a></li>
-                    </ul>
-                </li>
-                <li class="header-menu_item item_animation"><a href="#">Animation</a>
-                    <ul class="header-menu_submenu">
-                        <li><a href="#">Adventure</a></li>
-                        <li><a href="#">Adventure</a></li>
-                        <li><a href="#">Adventure</a></li>
-                    </ul>
-                </li>
-                <li class="header-menu_item item_documentary"><a href="#">Documentary</a>
-                    <ul class="header-menu_submenu">
-                        <li><a href="#">Adventure</a></li>
-                        <li><a href="#">Adventure</a></li>
-                        <li><a href="#">Adventure</a></li>
-                    </ul>
-                </li>
-                <li class="header-menu_item item_tvshow"><a href="#">TV Shows</a>
-                    <ul class="header-menu_submenu">
-                        <li><a href="#">Adventure</a></li>
-                        <li><a href="#">Adventure</a></li>
-                        <li><a href="#">Adventure</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </nav>
-        <div class="header-user">
-            <div class="header-user_photo"><img src="../../assets/img/profile-photo.png" alt=""></div>
-            <div class="header-user_name">Carol Danvers</div>
-            <div class="header-user_icon"></div>
-        </div>
-    </header>
-    <main>
-        <div class="container">
+<div class="profile-container">
             <div class="profile">
                 <div class="profile-photo"><img src="../../assets/img/user.png" alt=""></div>
                 <div class="profile-data">
-                    <div class="profile-login">Login: <span>aegleweb</span></div>
-                    <div class="profile-name">Name: <span>Viacheslav</span></div>
-                    <div class="profile-email">E-mail: <span>qwerty@gmail.com</span></div>
+                    <div class="profile-login">Login: <span ng-bind="user.profile.login"></span></div>
+                    <div class="profile-name">Name: <span ng-bind="user.profile.name"></span></div>
+                    <div class="profile-email">E-mail: <span ng-bind="user.profile.email"></span></div>
                     <button class="edit-profile">Edit profile</button>
                     <button class="delete-profile">Delete profile</button>
                 </div>
@@ -72,19 +18,7 @@
                         <th>Raiting</th>
                         <th>Delete</th>
                     </tr>
-                    <tr>
-                        <td>Star wars</td>
-                        <td>2017</td>
-                        <td>8.9</td>
-                        <td>-</td>
-                    </tr>
-                    <tr>
-                        <td>Star wars</td>
-                        <td>2017</td>
-                        <td>8.9</td>
-                        <td>-</td>
-                    </tr>
-                    <tr>
+                    <tr ng-repeat="">
                         <td>Star wars</td>
                         <td>2017</td>
                         <td>8.9</td>
@@ -93,18 +27,5 @@
                 </table>
 
             </div>
-        </div>
-    </main>
-    <footer>
-        <div class="footer-menu">
-            <ul>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Contact</a></li>
-                <li><a href="#">Terms and Conditions</a></li>
-            </ul>
-        </div>
-        <div class="footer-logo"><img src="../../assets/img/logo-footer.png" alt="Movie Store"></div>
-    </footer>
 </div>
-</body>
-</html>
+

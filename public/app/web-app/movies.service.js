@@ -1,6 +1,6 @@
 angular
     .module('movie-store')
-    .factory('MovieService', ['$http', function ($http) {
+    .factory('MovieService', ['$http', 'config', function ($http, config) {
 
         var vm = this;
             vm.movieconfig = {
@@ -20,7 +20,7 @@ angular
         return movieFactory;
 
         function getMoviesByType (arg){
-            return $http.get('http://localhost:8080/api/data', {params:{"type": arg.type, "genre": arg.genre, "page": arg.page}})
+            return $http.get(config.apiUrl.data, {params:{"type": arg.type, "genre": arg.genre, "page": arg.page}})
                 .then(function (response) {
                     vm.movieconfig.type = response.config.params.type;
                     vm.movieconfig.genre = response.config.params.genre;
@@ -35,7 +35,7 @@ angular
         }
         
         function getMovieByID(arg) {
-            return $http.get('http://localhost:8080/api/data/' + arg._id)
+            return $http.get(config.apiUrl.data + arg)
                 .then(function (response) {
                     vm.movieconfig.type = response.data.Type;
                     vm.movieconfig.genre = 'all';

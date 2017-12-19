@@ -11,6 +11,21 @@ angular
                     }
                 })
 
+                .state('profile', {
+                    url: '/profile',
+                    views: {
+                        '': {
+                            templateUrl: 'app/profile/profile.html',
+                            controller: 'UserController as user'
+                        }
+                    },
+                    resolve: {
+                        // userData:  function(UserService){
+                        //     return UserService.getUser();
+                        // }
+                    }
+                })
+
                 .state('store', {
                     url: '/{type}/{genre}',
                     data: {
@@ -39,7 +54,7 @@ angular
                    },
                     resolve: {
                         movieData:  function($stateParams, MovieService){
-                            return MovieService.getMovieByID({_id: $stateParams.movie_id});
+                            return MovieService.getMovieByID($stateParams.movie_id);
                         }
                     },
                     data: {
