@@ -1,37 +1,45 @@
 var mongoose = require('mongoose');
-var bcrypt = require('bcrypt-nodejs');
+var bcrypt = require('bcrypt');
 var Schema = mongoose.Schema;
 
 var UserShema = new Schema({
     login: {type: String, required: true, unique: true},
-    password: {type: String, required: true, select: false},
+    password: {type: String, required: true},
     name: {type: String},
-    email: {type: String},
+    email: {type: String, lowercase: true},
+    role: {type: String, enum: ['User', 'Admin'], default: 'User'},
     watchlist: {type: Array}
 });
 
-// hash the password before the user is saved
-UserSchema.pre('save', function(next) {
+//Save user`s hashed password
+UserShema.pre('save', function (next) {
     var user = this;
-
-    // hash the password only if the password has been changed or user is new
-    if (!user.isModified('password')) return next();
-
-    // generate the hash
-    bcrypt.hash(user.password, null, null, function(err, hash) {
-        if (err) return next(err);
-
-        // change the password to the hashed version
-        user.password = hash;
-        next();
-    });
+    if (this.isModified('password') || this.isNew) {
+        bcrypt.genSalt(10, function (err, salt) {
+            if (err) {
+                return next(err);
+            }
+            bcrypt.hash(user.password, salt, function (err, hash) {
+                if (err) {
+                    return next(err);
+                }
+                user.password = hash;
+                next();
+            });
+        });
+    } else {
+        return next();
+    }
 });
 
-// method to compare a given password with the database hash
-UserSchema.methods.comparePassword = function(password) {
-    var user = this;
-
-    return bcrypt.compareSync(password, user.password);
+//Compare password
+UserShema.methods.comparePassword = function (pw, cb) {
+  bcrypt.compare(pw, this.password, function (err, isMatch) {
+      if (err) {
+          return cb(err);
+      }
+      cb(null, isMatch);
+  });
 };
 
 module.exports = mongoose.model('User', UserShema);

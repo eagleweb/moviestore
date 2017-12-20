@@ -5,15 +5,17 @@ var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
 var morgan = require('morgan');
+var passport = require('passport');
+var jwt = require('jsonwebtoken');
 var mongoose = require('mongoose');
-var jwt = require('express-jwt');
 var cors = require('cors');
-var movieRouter = require('./backend/routes/movieRouter');
-var userRouter = require('./backend/routes/userRouter');
-var watchlistRouter = require('./backend/routes/watchlistRouter');
 var config = require('./config');
 var path = require('path');
 var helmet = require('helmet');
+var movieRouter = require('./backend/routes/movieRouter');
+var authRouter = require('./backend/routes/authRouter');
+var userRouter = require('./backend/routes/userRouter');
+var watchlistRouter = require('./backend/routes/watchlistRouter');
 
 // connect to DB on Mongolab
 mongoose.connect(config.database, {useMongoClient: true});
@@ -28,18 +30,20 @@ app.use(cors(config.corsOptions));
 
 app.use(morgan('dev'));
 
+//initialize passport
+app.use(passport.initialize());
+
+//bring in passport strategy
+require('./backend/auth/passport')(passport);
+
 //set static files location
 app.use(express.static(__dirname + '/public'));
-
-//Authentication middleware
-var jwtCheck = jwt({
-    secret: 'CtcKAdGOhY9IBFasMrhU-pKN1NxH7sZh2W-fDtSwxtQAd8RWk_IJSpzSQ4kl1V7Y',
-    audience: 'Flci7tvkKL4MP0v02VYm3XEsaNExUG4e'
-});
 
 // ROUTES FOR API =====================================================
 
 app.use('/api/data', movieRouter);
+app.use('/api/auth', authRouter);
+userRouter.use(passport.authenticate('jwt', { session: false }));
 app.use('/api/users', userRouter);
 app.use('/api/watchlist', watchlistRouter);
 
