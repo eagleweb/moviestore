@@ -6,7 +6,8 @@ angular
                     url: '/',
                     views: {
                         '': {
-                            templateUrl: 'app/main/home.html'
+                            templateUrl: 'app/main/home.html',
+                            controller: 'MainController as main'
                         }
                     }
                 })
