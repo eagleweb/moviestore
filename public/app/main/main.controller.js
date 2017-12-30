@@ -13,7 +13,7 @@ angular
             myIndex++;
             if (myIndex > x.length) {myIndex = 1}
             x[myIndex-1].style.display = "block";
-            setTimeout(vm.carousel, 5000);
+            setTimeout(vm.carousel, 7000);
         };
 
         vm.carousel();

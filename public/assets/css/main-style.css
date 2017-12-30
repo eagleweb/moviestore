@@ -269,18 +269,6 @@ main{
     transform: scale(1.2);
 }
 
-.next_button {
-    position: absolute;
-    right: 150px;
-    top: 250px;
-}
-
-.prev_button {
-    position: absolute;
-    left: 150px;
-    top: 250px;
-}
-
 /*Main row*/
 
 .first-row {

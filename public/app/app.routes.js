@@ -12,6 +12,16 @@ angular
                     }
                 })
 
+                .state('contact', {
+                    url: '/contact',
+                    views: {
+                        '': {
+                            templateUrl: 'app/contact/contact.html',
+                            controller: 'ContactController as contact'
+                        }
+                    }
+                })
+
                 .state('profile', {
                     url: '/profile',
                     views: {
