@@ -12,7 +12,7 @@ var UserSchema = new Schema({
 });
 
 //Save user`s hashed password
-UserShema.pre('save', function (next) {
+UserSchema.pre('save', function (next) {
     var user = this;
     if (this.isModified('password') || this.isNew) {
         bcrypt.genSalt(10, function (err, salt) {
@@ -33,7 +33,7 @@ UserShema.pre('save', function (next) {
 });
 
 //Compare password
-UserShema.methods.comparePassword = function (pw, cb) {
+UserSchema.methods.comparePassword = function (pw, cb) {
   bcrypt.compare(pw, this.password, function (err, isMatch) {
       if (err) {
           return cb(err);
