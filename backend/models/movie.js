@@ -2,7 +2,7 @@ var mongoose = require('mongoose');
 var mongoosePaginate = require('mongoose-paginate');
 var Schema = mongoose.Schema;
 
-var MovieShema = new Schema({
+var MovieSchema = new Schema({
     Title: {type: String, required: true},
     Year: {type: String},
     Rated: {type: String},
@@ -24,6 +24,6 @@ var MovieShema = new Schema({
     Type: {type: String}
 });
 
-    MovieShema.plugin(mongoosePaginate);
+    MovieSchema.plugin(mongoosePaginate);
 
-Movie = module.exports = mongoose.model('Movie', MovieShema);
+module.exports = mongoose.model('Movie', MovieSchema);

@@ -39,10 +39,13 @@ authRouter.route('/authenticate')
                 user.comparePassword(req.body.password, function (err, isMatch) {
                     if (isMatch && !err) {
                         // create token
-                        var token = jwt.sign(user, config.secret, {
+                        var payload = {
+                            id: user._id
+                        };
+                        var token = jwt.sign(payload, config.secret, {
                             expiresIn: 86400
                         });
-                        res.json({success: true, token: 'JWT' + token});
+                        res.json({success: true, token: 'JWT ' + token});
                     } else {
                         res.send({success: false, message: 'Authentication failed. Password did not match.'});
                     }

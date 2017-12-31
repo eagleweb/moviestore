@@ -6,7 +6,6 @@ var app = express();
 var bodyParser = require('body-parser');
 var morgan = require('morgan');
 var passport = require('passport');
-var jwt = require('jsonwebtoken');
 var mongoose = require('mongoose');
 var cors = require('cors');
 var config = require('./config');
@@ -43,7 +42,7 @@ app.use(express.static(__dirname + '/public'));
 
 app.use('/api/data', movieRouter);
 app.use('/api/auth', authRouter);
-userRouter.use(passport.authenticate('jwt', { session: false }));
+app.use('/api/users', passport.authenticate('jwt', { session: false }));
 app.use('/api/users', userRouter);
 app.use('/api/watchlist', watchlistRouter);
 
