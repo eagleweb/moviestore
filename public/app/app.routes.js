@@ -6,7 +6,18 @@ angular
                     url: '/',
                     views: {
                         '': {
-                            templateUrl: 'app/main/home.html'
+                            templateUrl: 'app/main/home.html',
+                            controller: 'MainController as main'
+                        }
+                    }
+                })
+
+                .state('contact', {
+                    url: '/contact',
+                    views: {
+                        '': {
+                            templateUrl: 'app/contact/contact.html',
+                            controller: 'ContactController as contact'
                         }
                     }
                 })
