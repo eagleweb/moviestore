@@ -138,6 +138,26 @@
 .header-menu_submenu a:hover {
     color: #3f444e;
 }
+/*Login/register profile*/
+
+.login, .register {
+    font-size: 15px;
+    font-weight: 700;
+    padding: 0 10px 0 10px;
+}
+
+.login a, .register a {
+     text-decoration: none;
+     color: #3f444e;
+ }
+
+.login a:hover, .register a:hover {
+    color: #d8232a;
+}
+
+.header-user .active{
+    color: #d8232a;
+}
 
 /*User profile*/
 

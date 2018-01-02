@@ -1,29 +1,20 @@
-.map-container {
+.auth-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
 }
 
-.contact {
-    text-align: center;
-}
-
-.contact h1 {
+.auth-container h1 {
     font-size: 35px;
     font-weight: 700;
-    padding: 40px 0 30px 0;
-}
-
-.contact p {
-    max-width: 600px;
-    font-size: 16px;
-    padding: 10px;
+    padding: 40px 0 10px 0;
 }
 
 /*Contact form style*/
 
-.contact-form {
+.login-form {
+    min-width: 400px;
     background: #F9F9F9;
     padding: 25px;
     margin: 30px 0;
@@ -31,44 +22,46 @@
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
 
-.contact-form fieldset {
+.login-form fieldset {
     margin: 0 0 10px;
     min-width: 100%;
 }
 
-.contact-form input[type="text"],
-.contact-form input[type="email"],
-.contact-form input[type="tel"],
-.contact-form input[type="url"],
-.contact-form textarea {
+.login-form input[type="text"],
+.login-form input[type="email"],
+.login-form input[type="tel"],
+.login-form input[type="url"],
+.login-form textarea {
     width: 100%;
+    border-radius: 6px;
     border: 1px solid #ccc;
     background: #FFF;
     margin: 0 0 5px;
     padding: 10px 0 10px 10px;
 }
 
-.contact-form input[type="text"]:hover,
-.contact-form input[type="email"]:hover,
-.contact-form input[type="tel"]:hover,
-.contact-form input[type="url"]:hover,
-.contact-form textarea:hover {
+.login-form input[type="text"]:hover,
+.login-form input[type="email"]:hover,
+.login-form input[type="tel"]:hover,
+.login-form input[type="url"]:hover,
+.login-form textarea:hover {
     -webkit-transition: border-color 0.3s ease-in-out;
     -moz-transition: border-color 0.3s ease-in-out;
     transition: border-color 0.3s ease-in-out;
     border: 1px solid #aaa;
 }
 
-.contact-form textarea {
+.login-form textarea {
     height: 100px;
     max-width: 100%;
     resize: none;
 }
 
-.contact-form button[type="submit"] {
+.login-form button[type="submit"] {
     cursor: pointer;
-    width: 100%;
+    width: 100px;
     border: none;
+    border-radius: 8px;
     background: #4CAF50;
     color: #FFF;
     margin: 0 0 5px;
@@ -76,20 +69,30 @@
     font-size: 15px;
 }
 
-.contact-form button[type="submit"]:hover {
+.login-form button[type="submit"]:hover {
     background: #43A047;
     -webkit-transition: background 0.3s ease-in-out;
     -moz-transition: background 0.3s ease-in-out;
     transition: background-color 0.3s ease-in-out;
 }
 
-.contact-form button[type="submit"]:active {
+.login-form button[type="submit"]:active {
     box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5);
 }
 
-.contact-form input:focus, .contact-form textarea:focus {
+.login-form input:focus, .login-form textarea:focus {
     outline: 0;
     border: 1px solid #aaa;
+}
+
+.login-form a {
+    float: right;
+    text-decoration: none;
+    color: #3f444e;
+}
+
+.login-form a:hover {
+    text-decoration: underline;
 }
 
 ::-webkit-input-placeholder {
@@ -106,11 +109,4 @@
 
 :-ms-input-placeholder {
     color: #888;
-}
-
-/*Google map*/
-
-#map {
-    width: 100%;
-    height: 500px;
 }

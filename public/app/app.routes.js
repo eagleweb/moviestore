@@ -12,6 +12,26 @@ angular
                     }
                 })
 
+                .state('login', {
+                    url: '/login',
+                    views: {
+                        '': {
+                            templateUrl: 'app/login/login.html',
+                            controller: 'LoginController as login'
+                        }
+                    }
+                })
+
+                .state('register', {
+                    url: '/register',
+                    views: {
+                        '': {
+                            templateUrl: 'app/register/register.html',
+                            controller: 'RegisterController as register'
+                        }
+                    }
+                })
+
                 .state('contact', {
                     url: '/contact',
                     views: {
