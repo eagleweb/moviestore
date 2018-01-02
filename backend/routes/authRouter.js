@@ -20,7 +20,9 @@ authRouter.route('/register')
 
             newUser.save(function (err) {
                 if (err) {
-                    return res.send(err);
+                    if (err.code === 11000) {
+                        return res.json({success: false, message: 'Registration failed. User exist.'});
+                    } else res.send(err);
                 }
                 res.json({success: true, message: 'User created successfully'});
             })

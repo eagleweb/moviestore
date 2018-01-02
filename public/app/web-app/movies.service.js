@@ -11,14 +11,6 @@ angular
                 totaldocs: 1
             };
 
-        var movieFactory ={
-            getMoviesByType: getMoviesByType,
-            getMovieByID: getMovieByID,
-            movieconfig: vm.movieconfig
-        };
-
-        return movieFactory;
-
         function getMoviesByType (arg){
             return $http.get(config.apiUrl.data, {params:{"type": arg.type, "genre": arg.genre, "page": arg.page}})
                 .then(function (response) {
@@ -45,5 +37,11 @@ angular
                     console.log('$http get error:' + err);
                 })
         }
+
+        return {
+            getMoviesByType: getMoviesByType,
+            getMovieByID: getMovieByID,
+            movieconfig: vm.movieconfig
+        };
 
     }]);

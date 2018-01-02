@@ -1,17 +1,12 @@
 angular.
     module('movie-store').
-    service('authService', authService);
+    service('authService', ['authManager', '$window', '$http', 'config', function (authManager, $window, $http, config) {
 
-    function authService(authManager, $window) {
-
-        function login (login, password){
-            return $http.post(config.apiUrl.authenticate, {login: login, password: password})
+        function login (loginForm){
+            return $http.post(config.apiUrl.authenticate, loginForm)
                 .then(function (response) {
-                    if (response.success) {
-                        $window.localStorage.setItem('token', response.token);
-                    } else {
-                        return response.message;
-                    }
+                    if (response.data.success) {$window.localStorage.setItem('token', response.data.token)}
+                    return response.data;
                 })
                 .catch(function (err) {
                     console.log('$http get error:' + err);
@@ -23,29 +18,20 @@ angular.
             authManager.unauthenticate();
         }
 
-        function register(login, password, email) {
-            return $http.post(config.apiUrl.register, {login: login, email: email, password: password})
+        function register(registerForm) {
+            return $http.post(config.apiUrl.register, registerForm)
                 .then(function (response) {
-                    if (response.success) {
-                        return response.message;
-                    } else {
-                        return response.message;
-                    }
+                    return response.data;
                 })
                 .catch(function (err) {
                     console.log('$http get error:' + err);
                 })
         }
 
-        function isAuthenticated() {
-            return authManager.isAuthenticated();
-        }
-
         return {
             login: login,
             logout: logout,
             register: register,
-            isAuthenticated: isAuthenticated
         };
 
-    }
+    }]);

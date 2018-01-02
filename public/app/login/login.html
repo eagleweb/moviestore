@@ -1,15 +1,19 @@
 <div class="auth-container">
     <h1>Login to Movie Store</h1>
-    <form class="login-form" action="#" method="post" ng-submit="login.doLogin()">
+    <form class="login-form" ng-submit="login.doLogin(loginForm)" ng-init="loginForm = {}" ng-show="login.success">
         <fieldset>
-            <input placeholder="Login" type="text" ng-model="login" tabindex="1" required autofocus>
+            <input placeholder="Login" type="text" ng-model="loginForm.login" required autofocus>
         </fieldset>
         <fieldset>
-            <input placeholder="Password" type="text" ng-model="password" tabindex="2" required>
+            <input placeholder="Password" type="password" ng-model="loginForm.password" required>
         </fieldset>
         <fieldset>
             <button name="login" type="submit" data-submit="...login">Login</button>
             <a href="#">Forgot password?</a>
         </fieldset>
     </form>
+    <div class="login-form try-again" ng-hide="login.success">
+        <p ng-bind="login.message"></p>
+        <button ng-click="login.tryAgain()">Try again?</button>
+    </div>
 </div>

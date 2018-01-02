@@ -29,8 +29,7 @@
 
 .login-form input[type="text"],
 .login-form input[type="email"],
-.login-form input[type="tel"],
-.login-form input[type="url"],
+.login-form input[type="password"],
 .login-form textarea {
     width: 100%;
     border-radius: 6px;
@@ -42,8 +41,7 @@
 
 .login-form input[type="text"]:hover,
 .login-form input[type="email"]:hover,
-.login-form input[type="tel"]:hover,
-.login-form input[type="url"]:hover,
+.login-form input[type="password"]:hover,
 .login-form textarea:hover {
     -webkit-transition: border-color 0.3s ease-in-out;
     -moz-transition: border-color 0.3s ease-in-out;
@@ -57,7 +55,7 @@
     resize: none;
 }
 
-.login-form button[type="submit"] {
+.login-form button[type="submit"], .try-again button {
     cursor: pointer;
     width: 100px;
     border: none;
@@ -67,9 +65,10 @@
     margin: 0 0 5px;
     padding: 10px;
     font-size: 15px;
+    outline: none;
 }
 
-.login-form button[type="submit"]:hover {
+.login-form button[type="submit"]:hover, .try-again button:hover {
     background: #43A047;
     -webkit-transition: background 0.3s ease-in-out;
     -moz-transition: background 0.3s ease-in-out;
@@ -110,3 +109,22 @@
 :-ms-input-placeholder {
     color: #888;
 }
+
+.try-again {
+    text-align: center;
+}
+
+.try-again p {
+    font-size: 20px;
+    padding-bottom: 20px;
+    -webkit-transition: top 1s ease-out 0.8s;
+    -moz-transition: top 1s ease-out 0.8s;
+    -o-transition: top 1s ease-out 0.8s;
+    transition: top 1s ease-out 0.8s;
+}
+
+.hidden {
+    display: none;
+}
+
+

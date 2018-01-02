@@ -1,18 +1,25 @@
 <div class="auth-container">
     <h1>Register at Movie Store</h1>
-    <form class="login-form" action="#" method="post">
+    <form class="login-form try-again" ng-class="{'hidden': register.hidden}" ng-submit="register.doRegister(registerForm)" ng-init="registerForm = {}" ng-show="register.success">
         <fieldset>
-            <input placeholder="Login" type="text" tabindex="1" required autofocus>
+            <input placeholder="Login" type="text" ng-model="registerForm.login" required autofocus>
         </fieldset>
         <fieldset>
-            <input placeholder="Password" type="text" tabindex="2" required>
+            <input placeholder="Password" type="password" ng-model="registerForm.password" required>
         </fieldset>
         <fieldset>
-            <input placeholder="Email" type="email" tabindex="3">
+            <input placeholder="Email" type="email" ng-model="registerForm.email">
         </fieldset>
         <fieldset>
             <button name="submit" type="submit" data-submit="...register">Register</button>
             <a ui-sref="login">Member login</a>
         </fieldset>
     </form>
+    <div class="login-form try-again" ng-class="{'hidden': register.hidden}" ng-hide="register.success">
+        <p ng-bind="register.message"></p>
+        <button ng-click="register.tryAgain()">Try again?</button>
+    </div>
+    <div class="login-form try-again" ng-show="register.hidden">
+        <p ng-bind="register.message"></p>
+    </div>
 </div>
