@@ -49,12 +49,12 @@ angular
                             templateUrl: 'app/profile/profile.html',
                             controller: 'UserController as user'
                         }
-                    },
-                    resolve: {
-                        // userData:  function(UserService){
-                        //     return UserService.getUser();
-                        // }
                     }
+                    // resolve: {
+                    //     userData:  function(UserService){
+                    //         return UserService.getUser($rootScope.id);
+                    //     }
+                    // }
                 })
 
                 .state('store', {

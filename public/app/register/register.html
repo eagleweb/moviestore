@@ -1,6 +1,6 @@
 <div class="auth-container">
     <h1>Register at Movie Store</h1>
-    <form class="login-form try-again" ng-class="{'hidden': register.hidden}" ng-submit="register.doRegister(registerForm)" ng-init="registerForm = {}" ng-show="register.success">
+    <form class="login-form" ng-class="{'hidden': register.hidden}" ng-submit="register.doRegister(registerForm)" ng-init="registerForm = {}" ng-show="register.success">
         <fieldset>
             <input placeholder="Login" type="text" ng-model="registerForm.login" required autofocus>
         </fieldset>

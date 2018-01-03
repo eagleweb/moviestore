@@ -42,7 +42,8 @@ authRouter.route('/authenticate')
                     if (isMatch && !err) {
                         // create token
                         var payload = {
-                            id: user._id
+                            id: user._id,
+                            login: user.login
                         };
                         var token = jwt.sign(payload, config.secret, {
                             expiresIn: 86400

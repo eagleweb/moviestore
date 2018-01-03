@@ -11,6 +11,7 @@ var cors = require('cors');
 var config = require('./config');
 var path = require('path');
 var helmet = require('helmet');
+var favicon = require('serve-favicon');
 var movieRouter = require('./backend/routes/movieRouter');
 var authRouter = require('./backend/routes/authRouter');
 var userRouter = require('./backend/routes/userRouter');
@@ -37,6 +38,8 @@ require('./backend/auth/passport')(passport);
 
 //set static files location
 app.use(express.static(__dirname + '/public'));
+
+app.use(favicon(path.join(__dirname, '/public/assets/img/', 'favicon.ico')))
 
 // ROUTES FOR API =====================================================
 

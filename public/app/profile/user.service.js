@@ -3,7 +3,7 @@ angular
     .factory('UserService', ['$rootScope', '$http', 'config', function ($rootScope, $http, config) {
 
         function getUser(user_id) {
-            return $http.get(config.apiUrl.users + '58bff60bb610740ac01db092')
+            return $http.get(config.apiUrl.users + user_id)
                 .then(function (response) {
                     return response.data;
                 })

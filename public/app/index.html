@@ -59,8 +59,14 @@
                 </ul>
             </nav>
             <div class="header-user">
-                <div class="login"><a ui-sref-active="active" ui-sref="login">Login</a></div>
-                <div class="register"><a ui-sref-active="active" ui-sref="register">Register</a></div>
+                <div ng-if="!isAuthenticated">
+                    <div class="login"><a ui-sref-active="active" ui-sref="login">Login</a></div>
+                    <div class="register"><a ui-sref-active="active" ui-sref="register">Register</a></div>
+                </div>
+                <div ng-if="isAuthenticated">
+                    <div class="header-user_name"><a ui-sref="profile" ng-bind="root.loginName()"></a></div>
+                    <div class="logout" ng-click="root.doLogout()">Logout</div>
+                </div>
             </div>
         </header>
         <main ng-class="{'main-fixed': root.page()}" ng-cloak>

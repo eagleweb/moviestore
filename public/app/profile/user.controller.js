@@ -1,23 +1,13 @@
 angular
     .module('movie-store')
-    .controller('UserController', ['UserService', 'userData', 'orderByFilter', function (UserService, userData, orderByFilter){
+    .controller('UserController', ['UserService', 'orderByFilter', function (UserService, orderByFilter){
         
         var vm = this;
-            // vm.profile = userData;
             // vm.reverse = true;
 
         // UserService.getUser()
         //     .then(function (response) {
         //         vm.profile = response;
-        //     })
-        //     .then(function () {
-        //         UserService.getWatchList(vm.profile._id)
-        //             .then(function (response) {
-        //                 vm.watchlist = response;
-        //             })
-        //             .catch(function (err) {
-        //                 console.log(err);
-        //             })
         //     })
         //     .catch(function (err) {
         //         console.log(err);

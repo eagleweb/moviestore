@@ -21,9 +21,9 @@ function config(jwtOptionsProvider, $httpProvider) {
             if (options && options.url.substr(options.url.length - 5) === '.html') {
                 return null;
             }
-            return localStorage.getItem('id_token');
+            return localStorage.getItem('token');
         }],
-        authPrefix: 'JWT ',
+        authPrefix: '',
         whiteListedDomains: ['localhost'],
         unauthenticatedRedirectPath: ['$state', function($state) {
             $state.go('login');
