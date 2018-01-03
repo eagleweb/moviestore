@@ -2,20 +2,23 @@ angular
     .module('movie-store')
     .controller('MainController', [ function (){
         var vm = this;
-        var myIndex = 0;
+        var slideIndex = 1;
 
-        vm.carousel = function () {
-            var i;
-            var x = document.getElementsByClassName("slide");
-            for (i = 0; i < x.length; i++) {
-                x[i].style.display = "none";
-            }
-            myIndex++;
-            if (myIndex > x.length) {myIndex = 1}
-            x[myIndex-1].style.display = "block";
-            setTimeout(vm.carousel, 7000);
+        vm.plusSlides = function (n) {
+            vm.showSlides(slideIndex += n);
         };
 
-        vm.carousel();
+        vm.showSlides = function (n) {
+            var i;
+            var slides = document.getElementsByClassName("slide");
+            if (n > slides.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = slides.length}
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slides[slideIndex-1].style.display = "block";
+        };
+
+        vm.showSlides(slideIndex);
 
     }]);

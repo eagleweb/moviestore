@@ -10,19 +10,23 @@
                 </div>
             </div>
             <div class="watch-list">
-                <h2>Your WatchList:</h2>
+                <h2>Your Watch List:</h2>
                 <table class="watch-list-table">
                     <tr>
-                        <th>Movie</th>
-                        <th>Year</th>
-                        <th>Raiting</th>
+                        <th>#</th>
+                        <th ng-click="user.orderByMe('Title')">Movie<span class="sort-order" ng-show="user.propertyName === 'Title'" ng-class="{reverse: user.reverse}"></span></th>
+                        <th ng-click="user.orderByMe('Year')">Year<span class="sort-order" ng-show="user.propertyName === 'Year'" ng-class="{reverse: user.reverse}"></span></th>
+                        <th ng-click="user.orderByMe('Type')">Type<span class="sort-order" ng-show="user.propertyName === 'Type'" ng-class="{reverse: user.reverse}"></span></th>
+                        <th ng-click="user.orderByMe('imdbRating')">Raiting<span class="sort-order" ng-show="user.propertyName === 'imdbRating'" ng-class="{reverse: user.reverse}"></span></th>
                         <th>Delete</th>
                     </tr>
-                    <tr ng-repeat="">
-                        <td>Star wars</td>
-                        <td>2017</td>
-                        <td>8.9</td>
-                        <td>-</td>
+                    <tr ng-repeat="movie in user.watchlist | orderBy: user.myOrderBy">
+                        <td ng-bind="$index + 1"></td>
+                        <td><a ng-bind="movie.Title" ui-sref="movie({ movie_id: movie._id })"></a></td>
+                        <td ng-bind="movie.Year"></td>
+                        <td ng-bind="movie.Type"></td>
+                        <td ng-bind="movie.imdbRating"></td>
+                        <td><button ng-click="user.removeMovieFromWatchList(movie._id)"></button></td>
                     </tr>
                 </table>
 

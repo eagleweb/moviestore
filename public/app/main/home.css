@@ -1,0 +1,215 @@
+/*Slider on main page*/
+
+.main-slider {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    position: relative;
+}
+
+.slide {
+    position: relative;
+    display: none;
+}
+
+.slide_text {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.7);
+    bottom: 0;
+    width: 100%;
+}
+
+.slide_info {
+    padding: 20px 20px 20px 50px;
+    font-size: 16px;
+    text-transform: uppercase;
+    color: white;
+    font-weight: 600;
+    float: left;
+}
+
+.slide_info span{
+    font-size: 15px;
+    padding-left: 10px;
+    color: #d8232a;
+    font-weight: 700;
+}
+
+.elem_position {
+    float: right;
+    padding: 20px;
+    font-size: 14px;
+    color: white;
+    font-weight: 700
+}
+
+.elem_position:before{
+    content: '';
+    margin: 0 3px;
+    left: 0;
+    top: 3px;
+    padding-right: 5px;
+    position: relative;
+    display: inline-block;
+}
+
+.slide_download {
+    padding-right: 50px;
+}
+
+.slide_like:before {
+    width: 16px; height: 13px;
+    background: url("../../assets/img/css_sprites.png") -163px -329px;
+}
+
+.slide_comments:before {
+    width: 14px; height: 15px;
+    background: url("../../assets/img/css_sprites.png") -317px -288px;
+}
+
+.slide_download:before {
+    width: 14px; height: 15px;
+    background: url("../../assets/img/css_sprites.png") -283px -288px;
+}
+
+.watch_now {
+    position: absolute;
+    right: 150px;
+    top: 210px;
+    background: #d8232a;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 14px;
+    font-weight: 700;
+    color: white;
+    text-transform: uppercase;
+    outline: none;
+    border: none;
+    transform: scale(1);
+}
+
+.watch_now:hover {
+    box-shadow: 0 0 150px #000000;
+    z-index: 3;
+    -webkit-transition: all 200ms ease-in;
+    -webkit-transform: scale(1.5);
+    -ms-transition: all 200ms ease-in;
+    -ms-transform: scale(1.5);
+    -moz-transition: all 200ms ease-in;
+    -moz-transform: scale(1.5);
+    transition: all 200ms ease-in;
+    transform: scale(1.2);
+}
+
+/* Next & previous buttons */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+}
+
+/* Position the "next button" to the right */
+.next {
+     right: 0;
+     border-radius: 3px 0 0 3px;
+ }
+
+.prev {
+    left: 0;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+}
+
+/* Fading animation */
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+}
+
+@keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+    .prev, .next,.text {font-size: 11px}
+}
+
+/*Main row*/
+
+.first-row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.first-row h1{
+    font-size: 35px;
+    font-weight: 700;
+    color: #d8232a;
+    padding: 40px 0 30px 0;
+}
+
+.first-row p{
+    max-width: 800px;
+    line-height: 20px;
+    color: #3f444e;
+    text-align: center;
+    padding-bottom: 30px;
+}
+
+/*Main content with movies*/
+
+.partner-row {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-bottom: 10px;
+}
+
+.partner_1 {
+    width: 108px; height: 100px;
+    background: url("../../assets/img/css_sprites.png") -251px -130px;
+}
+
+.partner_2 {
+    width: 109px; height: 100px;
+    background: url("../../assets/img/css_sprites.png") -251px -10px;
+}
+
+.partner_3 {
+    width: 221px; height: 100px;
+    background: url("../../assets/img/css_sprites.png") -10px -10px;
+}
+
+.partner_4 {
+    width: 100px; height: 100px;
+    background: url("../../assets/img/css_sprites.png") -10px -250px;
+}
+
+.partner_5 {
+    width: 158px; height: 100px;
+    background: url("../../assets/img/css_sprites.png")  -10px -130px;
+}

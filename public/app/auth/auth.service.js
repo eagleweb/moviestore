@@ -8,10 +8,8 @@ angular.
                     if (response.data.success) {
                         $window.localStorage.setItem('token', response.data.token);
                         var tokenPayload = jwtHelper.decodeToken(response.data.token);
-                        // console.log(tokenPayload);
-                        // $window.localStorage.setItem('login', tokenPayload.login);
-                        $rootScope.id = tokenPayload.id;
-                        $rootScope.login = tokenPayload.login;
+                        $window.localStorage.setItem('login', tokenPayload.login);
+                        $window.localStorage.setItem('id', tokenPayload.id);
                         authManager.authenticate();
                     }
                     return response.data;
@@ -23,19 +21,14 @@ angular.
 
         function logout() {
             localStorage.removeItem('token');
+            localStorage.removeItem('login');
+            localStorage.removeItem('id');
             authManager.unauthenticate();
-            $rootScope.login = undefined;
-            $rootScope.id = undefined;
-            // localStorage.removeItem('login');
         }
 
         function register(registerForm) {
             return $http.post(config.apiUrl.register, registerForm)
                 .then(function (response) {
-                    if (response.data.success) {
-                        $window.localStorage.setItem('token', response.data.token);
-                        authManager.authenticate();
-                    }
                     return response.data;
                 })
                 .catch(function (err) {

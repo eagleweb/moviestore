@@ -1,5 +1,5 @@
 <div class="main-slider">
-    <div class="slide">
+    <div class="slide fade">
         <img src="../assets/img/slider/slide1.jpg" alt="">
         <div class="slide_text">
             <div class="slide_info">Published <span>Feb 24, 2017</span></div>
@@ -10,7 +10,7 @@
         </div>
         <button class="watch_now">Watch now</button>
     </div>
-    <div class="slide">
+    <div class="slide fade">
         <img src="../assets/img/slider/slide2.jpg" alt="">
         <div class="slide_text">
             <div class="slide_info">Published <span>Feb 20, 2017</span></div>
@@ -21,7 +21,7 @@
         </div>
         <button class="watch_now">Watch now</button>
     </div>
-    <div class="slide">
+    <div class="slide fade">
         <img src="../assets/img/slider/slide3.jpg" alt="">
         <div class="slide_text">
             <div class="slide_info">Published <span>Feb 20, 2017</span></div>
@@ -32,6 +32,8 @@
         </div>
         <button class="watch_now">Watch now</button>
     </div>
+    <a class="prev" ng-click="main.plusSlides(-1)">&#10094;</a>
+    <a class="next" ng-click="main.plusSlides(1)">&#10095;</a>
 </div>
 <div class="first-row">
     <h1>All the Movies You Need. Guaranteed.</h1>

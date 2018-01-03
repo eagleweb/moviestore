@@ -13,7 +13,7 @@ angular
                     if (response.success) {
                         vm.message = response.message;
                         vm.hidden = true;
-                        setTimeout(function(){$state.go('profile')}, 2000);
+                        setTimeout(function(){$state.go('login')}, 2000);
                     } else {
                         vm.message = response.message;
                     }

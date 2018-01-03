@@ -1,6 +1,6 @@
 angular
     .module('movie-store')
-    .controller('RootCtrl', ['$rootScope', '$state', '$window', 'authService', function ($rootScope, $state, $window, authService){
+    .controller('RootCtrl', ['$state', '$window', 'authService', function ($state, $window, authService){
 
         var vm = this;
 
@@ -14,7 +14,7 @@ angular
         };
 
         vm.loginName = function () {
-            return $rootScope.login;
+            return $window.localStorage.getItem('login');
         }
 
     }]);

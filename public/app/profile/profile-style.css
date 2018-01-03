@@ -94,6 +94,15 @@
     padding: 12px 0;
     background-color: #4CAF50;
     color: white;
+    cursor: pointer;
+}
+
+/*arrow on userpage*/
+.sort-order:after {
+    content: '\25b2';
+}
+.sort-order.reverse:after {
+    content: '\25bc';
 }
 
 

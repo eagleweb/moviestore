@@ -5,7 +5,6 @@ var Schema = mongoose.Schema;
 var UserSchema = new Schema({
     login: {type: String, required: true, unique: true},
     password: {type: String, required: true},
-    name: {type: String},
     email: {type: String, lowercase: true},
     role: {type: String, enum: ['User', 'Admin'], default: 'User'},
     watchlist: {type: Array}
