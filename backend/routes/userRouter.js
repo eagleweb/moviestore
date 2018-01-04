@@ -16,7 +16,7 @@ userRouter.route('/:user_id')
 
     // add movie to watchlist for user with user_id
     .put(function(req, res) {
-        User.update({user_id: req.params.user_id}, {$addToSet: {watchlist: req.body.movie_id}}, function(err){
+        User.update({_id: req.params.user_id}, {$addToSet: {watchlist: req.body.movie_id}}, function(err){
             if (err) res.send(err);
             res.json({success: true, message: 'Movie added!'})
         });
@@ -24,7 +24,7 @@ userRouter.route('/:user_id')
 
     // remove movie from watchlist for user with user_id
     .delete(function(req, res) {
-        User.update({user_id: req.params.user_id}, {$pull: {watchlist: req.query.movie_id}}, {'new': true}, function(err){
+        User.update({_id: req.params.user_id}, {$pull: {watchlist: req.query.movie_id}}, {'new': true}, function(err){
             if (err) res.send(err);
             res.json({success: true, message: 'Movie removed!'})
         });

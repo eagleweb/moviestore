@@ -11,6 +11,11 @@
             </div>
             <div class="watch-list">
                 <h2>Your Watch List:</h2>
+                <form>
+                    <div class="">
+                        <input type="text" ng-model="searchKeyword" placeholder="Search">
+                    </div>
+                </form>
                 <table class="watch-list-table">
                     <tr>
                         <th>#</th>
@@ -20,7 +25,7 @@
                         <th ng-click="user.orderByMe('imdbRating')">Raiting<span class="sort-order" ng-show="user.propertyName === 'imdbRating'" ng-class="{reverse: user.reverse}"></span></th>
                         <th>Delete</th>
                     </tr>
-                    <tr ng-repeat="movie in user.watchlist | orderBy: user.myOrderBy">
+                    <tr ng-repeat="movie in user.watchlist | orderBy: user.myOrderBy | filter: searchKeyword">
                         <td ng-bind="$index + 1"></td>
                         <td><a ng-bind="movie.Title" ui-sref="movie({ movie_id: movie._id })"></a></td>
                         <td ng-bind="movie.Year"></td>

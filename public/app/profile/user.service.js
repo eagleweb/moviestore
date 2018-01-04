@@ -23,7 +23,7 @@ angular
         }
 
         function addMovieToWatchList(user_id, movie_id){
-            $rootScope.watchlist.push(movie_id);
+            // $rootScope.watchlist.push(movie_id);
             return $http.put(config.apiUrl.users + user_id, {movie_id: movie_id})
                 .then(function (response) {
                     return response.data;
@@ -34,8 +34,8 @@ angular
         }
 
         function removeMovieFromWatchList(user_id, movie_id){
-            var index = $rootScope.watchlist.indexOf(movie_id);
-            $rootScope.watchlist.splice(index, 1);
+            // var index = $rootScope.watchlist.indexOf(movie_id);
+            // $rootScope.watchlist.splice(index, 1);
             return $http.delete(config.apiUrl.users + user_id, {params: {'movie_id': movie_id}})
                 .then(function (response) {
                     return response.data;

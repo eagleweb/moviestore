@@ -21,6 +21,7 @@
         <div class="content-block">
             <div><p><img ng-src="{{movie.data.Poster}}"></p></div>
             <div><h1 ng-bind="movie.data.Title"></h1></div>
+            <button ng-click="movie.addMovieToWatchList()">Add</button>
         </div>
     </div>
 </div>

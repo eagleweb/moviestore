@@ -7,7 +7,7 @@ var UserSchema = new Schema({
     password: {type: String, required: true},
     email: {type: String, lowercase: true},
     role: {type: String, enum: ['User', 'Admin'], default: 'User'},
-    watchlist: {type: Array}
+    watchlist: {type: Array, default: []}
 });
 
 //Save user`s hashed password

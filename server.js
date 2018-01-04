@@ -39,13 +39,13 @@ require('./backend/auth/passport')(passport);
 //set static files location
 app.use(express.static(__dirname + '/public'));
 
-app.use(favicon(path.join(__dirname, '/public/assets/img/', 'favicon.ico')))
+app.use(favicon(path.join(__dirname, '/public/assets/img/', 'favicon.ico')));
 
 // ROUTES FOR API =====================================================
 
 app.use('/api/data', movieRouter);
 app.use('/api/auth', authRouter);
-app.use('/api/users', passport.authenticate('jwt', { session: false }));
+// app.use('/api/users', passport.authenticate('jwt', { session: false }));
 app.use('/api/users', userRouter);
 app.use('/api/watchlist', watchlistRouter);
 

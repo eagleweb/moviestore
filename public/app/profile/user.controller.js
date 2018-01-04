@@ -10,17 +10,19 @@ angular
             .then(function (response) {
                 vm.profile = response;
             })
-            .catch(function (err) {
-                console.log(err);
-            });
-
-        UserService.getWatchList(vm.user_id)
-            .then(function (response) {
-                vm.watchlist = response;
+            .then(function () {
+                UserService.getWatchList(vm.user_id)
+                    .then(function (response) {
+                        vm.watchlist = response;
+                    })
+                    .catch(function (err) {
+                        console.log(err);
+                    });
             })
             .catch(function (err) {
                 console.log(err);
             });
+
 
         vm.removeMovieFromWatchList = function(_id){
             UserService.removeMovieFromWatchList(vm.user_id, _id)
