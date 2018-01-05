@@ -9,6 +9,7 @@ angular
         UserService.getUser(vm.user_id)
             .then(function (response) {
                 vm.profile = response;
+                $window.localStorage.setItem('watchlist', response.watchlist);
             })
             .then(function () {
                 UserService.getWatchList(vm.user_id)
