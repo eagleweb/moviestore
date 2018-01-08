@@ -23,6 +23,7 @@ angular.
             localStorage.removeItem('token');
             localStorage.removeItem('login');
             localStorage.removeItem('id');
+            localStorage.removeItem('watchlist');
             authManager.unauthenticate();
         }
 

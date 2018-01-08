@@ -153,20 +153,25 @@
     display: inline-block;
 }
 
-.pagination a {
+.pagination button {
     color: #989ca4;
+    background: none;
     float: left;
     padding: 8px 16px;
+    border: none;
     text-decoration: none;
+    outline: none;
+    cursor: pointer;
+    margin: 5px;
 }
 
-.pagination a.active {
+.pagination button.active {
     background-color: #d8232a;
     color: white;
     border-radius: 5px;
 }
 
-.pagination a:hover:not(.active) {
+.pagination button:hover:not(.active) {
     background-color: #ddd;
     border-radius: 5px;
 }

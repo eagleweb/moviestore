@@ -2,24 +2,10 @@ angular
     .module('movie-store')
     .factory('MovieService', ['$http', 'config', function ($http, config) {
 
-        var vm = this;
-            vm.movieconfig = {
-                type: 'movie',
-                genre: 'all',
-                page: 1,
-                totalpages: 1,
-                totaldocs: 1
-            };
-
         function getMoviesByType (arg){
             return $http.get(config.apiUrl.data, {params:{"type": arg.type, "genre": arg.genre, "page": arg.page}})
                 .then(function (response) {
-                    vm.movieconfig.type = response.config.params.type;
-                    vm.movieconfig.genre = response.config.params.genre;
-                    vm.movieconfig.page = response.config.params.page;
-                    vm.movieconfig.totalpages = response.data.pages;
-                    vm.movieconfig.totaldocs = response.data.total;
-                    return response.data.docs;
+                    return response.data;
                 })
                 .catch(function (err) {
                     console.log('$http get error:' + err);
@@ -29,8 +15,6 @@ angular
         function getMovieByID(arg) {
             return $http.get(config.apiUrl.data + arg)
                 .then(function (response) {
-                    vm.movieconfig.type = response.data.Type;
-                    vm.movieconfig.genre = 'all';
                     return response.data;
                 })
                 .catch(function (err) {
@@ -40,8 +24,7 @@ angular
 
         return {
             getMoviesByType: getMoviesByType,
-            getMovieByID: getMovieByID,
-            movieconfig: vm.movieconfig
+            getMovieByID: getMovieByID
         };
 
     }]);

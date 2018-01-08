@@ -45,8 +45,9 @@ app.use(favicon(path.join(__dirname, '/public/assets/img/', 'favicon.ico')));
 
 app.use('/api/data', movieRouter);
 app.use('/api/auth', authRouter);
-// app.use('/api/users', passport.authenticate('jwt', { session: false }));
+app.use('/api/users', passport.authenticate('jwt', { session: false }));
 app.use('/api/users', userRouter);
+app.use('/api/watchlist', passport.authenticate('jwt', { session: false }));
 app.use('/api/watchlist', watchlistRouter);
 
 //SEND USERS TO FRONTEND

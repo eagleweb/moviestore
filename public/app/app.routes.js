@@ -47,14 +47,9 @@ angular
                     views: {
                         '': {
                             templateUrl: 'app/profile/profile.html',
-                            controller: 'UserController as user'
+                            controller: 'ProfileController as user'
                         }
                     }
-                    // resolve: {
-                    //     userData:  function(UserService){
-                    //         return UserService.getUser($rootScope.id);
-                    //     }
-                    // }
                 })
 
                 .state('store', {

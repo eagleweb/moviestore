@@ -1,6 +1,6 @@
 angular
     .module('movie-store')
-    .controller('UserController', ['$window', 'UserService', 'orderByFilter', function ($window, UserService, orderByFilter){
+    .controller('ProfileController', ['$window', 'UserService', 'orderByFilter', function ($window, UserService, orderByFilter){
         
         var vm = this;
             vm.user_id = $window.localStorage.getItem('id');
