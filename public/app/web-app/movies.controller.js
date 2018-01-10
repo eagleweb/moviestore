@@ -9,9 +9,19 @@ angular
 
         vm.getNextPage = function () {
             MovieService.getMoviesByType({type: $stateParams.type, genre: $stateParams.genre, page: ++vm.curentpage})
+                .then(function (response) {
+                    vm.data = response.docs;
+                    vm.totalpages = response.pages;
+                    vm.curentpage = response.page;
+                })
         };
 
         vm.getPreviousPage = function () {
             MovieService.getMoviesByType({type: $stateParams.type, genre: $stateParams.genre, page: --vm.curentpage})
+                .then(function (response) {
+                    vm.data = response.docs;
+                    vm.totalpages = response.pages;
+                    vm.curentpage = response.page;
+                })
         }
     }]);

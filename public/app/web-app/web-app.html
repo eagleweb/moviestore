@@ -69,12 +69,10 @@
                 <p><span ng-bind="movies.Year"></span> | <span ng-bind="movies.Country"></span></p>
             </div>
         </div>
-        <div class="pagination" ng-repeat="">
-            <button ng-disabled="movie.curentpage > 1" ng-click="movie.getPreviousPage()">&laquo;</button>
-            <button class="active">1</button>
-            <button >2</button>
-            <button >3</button>
-            <button ng-disabled="movie.curentpage < movie.totalpages" ng-click="movie.getNextPage()">&raquo;</button>
+        <div class="pagination">
+            <button ng-if="movie.curentpage > 1" ng-click="movie.getPreviousPage()">&laquo;</button>
+
+            <button ng-if="movie.curentpage < movie.totalpages" ng-click="movie.getNextPage()">&raquo;</button>
         </div>
     </div>
 </div>
