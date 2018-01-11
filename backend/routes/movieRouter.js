@@ -23,6 +23,7 @@ movieRouter.route('/')
 
 movieRouter.route('/search')
     .get(function (req, res) {
+
        Movie.find({ $text : { $search : req.query.search } }, { score : { $meta: "textScore" } })
            .sort({ score : { $meta : 'textScore' } })
            .limit(10)
