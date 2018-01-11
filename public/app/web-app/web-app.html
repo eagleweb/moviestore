@@ -63,16 +63,16 @@
             </div>
         </div>
         <div class="content-block">
-            <div ng-repeat="movies in movie.data">
+            <div class="movie-block" ng-repeat="movies in movie.data">
                 <p><img ng-src="{{movies.Poster}}" width="250" height="395"></p>
                 <h4><a ng-bind="movies.Title" ui-sref="movie({movie_id: movies._id})"></a></h4>
                 <p><span ng-bind="movies.Year"></span> | <span ng-bind="movies.Country"></span></p>
             </div>
         </div>
         <div class="pagination">
-            <button ng-if="movie.curentpage > 1" ng-click="movie.getPreviousPage()">&laquo;</button>
-
-            <button ng-if="movie.curentpage < movie.totalpages" ng-click="movie.getNextPage()">&raquo;</button>
+            <button ng-disabled="movie.curentpage == 1" ng-click="movie.getPreviousPage()">&laquo; Previous</button>
+            <p>{{movie.curentpage}} from {{movie.totalpages}}</p>
+            <button ng-disabled="movie.curentpage == movie.totalpages" ng-click="movie.getNextPage()">Next &raquo;</button>
         </div>
     </div>
 </div>

@@ -23,5 +23,6 @@ angular
                     vm.totalpages = response.pages;
                     vm.curentpage = response.page;
                 })
-        }
+        };
+
     }]);

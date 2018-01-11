@@ -24,6 +24,8 @@ var MovieSchema = new Schema({
     Type: {type: String}
 });
 
+    MovieSchema.index({'Title': 'text', 'Year': 'text', 'Plot': 'text', 'Country': 'text', 'Director': 'text', 'Actors': 'text'});
+
     MovieSchema.plugin(mongoosePaginate);
 
 module.exports = mongoose.model('Movie', MovieSchema);

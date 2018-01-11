@@ -149,12 +149,20 @@
     visibility: visible;
 }
 
+.content-block {
+    margin: 0 10px;
+}
+
+.movie-block{
+
+}
+
 .pagination {
     display: inline-block;
+    color: #989ca4;
 }
 
 .pagination button {
-    color: #989ca4;
     background: none;
     float: left;
     padding: 8px 16px;
@@ -163,6 +171,11 @@
     outline: none;
     cursor: pointer;
     margin: 5px;
+}
+
+.pagination p {
+    float: left;
+    padding: 10px 16px;
 }
 
 .pagination button.active {

@@ -21,6 +21,13 @@ movieRouter.route('/')
 
     });
 
+movieRouter.route('/search')
+    .get(function (req, res) {
+       Movie.find({ $text: { $search: req.query.search } }, function (err, result) {
+
+       })
+    });
+
 movieRouter.route('/:movie_id')
     .get(function (req, res) {
 
