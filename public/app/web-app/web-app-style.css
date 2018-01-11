@@ -84,7 +84,7 @@
     font-style: oblique;
 }
 
-.search:after {
+.search form:after {
     content: '';
     width: 15px; height: 16px;
     background: url("../../assets/img/css_sprites.png") -249px -250px;

@@ -22,9 +22,21 @@ angular
                 })
         }
 
+        function getMovieBySearchPhrase(arg) {
+            console.log(typeof arg);
+            return $http.get(config.apiUrl.search, {params:{"search": arg.search}})
+                .then(function (response) {
+                    return response.data;
+                })
+                .catch(function (err) {
+                    console.log('$http get error:' + err);
+                })
+        }
+
         return {
             getMoviesByType: getMoviesByType,
-            getMovieByID: getMovieByID
+            getMovieByID: getMovieByID,
+            getMovieBySearchPhrase: getMovieBySearchPhrase
         };
 
     }]);

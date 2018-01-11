@@ -6,6 +6,7 @@ angular
         appVersion: 1.0,
         apiUrl: {
             data: 'http://localhost:8080/api/data/',
+            search: 'http://localhost:8080/api/data/search/',
             authenticate: 'http://localhost:8080/api/auth/authenticate',
             register: 'http://localhost:8080/api/auth/register',
             users: 'http://localhost:8080/api/users/',

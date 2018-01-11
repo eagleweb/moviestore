@@ -23,9 +23,13 @@ movieRouter.route('/')
 
 movieRouter.route('/search')
     .get(function (req, res) {
-       Movie.find({ $text: { $search: req.query.search } }, function (err, result) {
-
-       })
+       Movie.find({ $text : { $search : req.query.search } }, { score : { $meta: "textScore" } })
+           .sort({ score : { $meta : 'textScore' } })
+           .limit(10)
+           .exec(function(err, result) {
+               if (err) res.send(err);
+               res.json(result)
+           });
     });
 
 movieRouter.route('/:movie_id')

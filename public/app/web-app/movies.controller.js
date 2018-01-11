@@ -24,5 +24,13 @@ angular
                     vm.curentpage = response.page;
                 })
         };
+        
+        vm.Search = function (searchPhrase) {
+            console.log(typeof searchPhrase);
+            MovieService.getMovieBySearchPhrase({search: searchPhrase})
+                .then(function (response) {
+                    vm.data = response;
+                })
+        }
 
     }]);
