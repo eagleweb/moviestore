@@ -22,6 +22,16 @@ angular
                     }
                 })
 
+                .state('search', {
+                    url: '/search',
+                    views: {
+                        '': {
+                            templateUrl: 'app/search/search.html',
+                            controller: 'SearchController as search'
+                        }
+                    }
+                })
+
                 .state('register', {
                     url: '/register',
                     views: {
@@ -60,7 +70,7 @@ angular
                     views: {
                         '': {
                             templateUrl: 'app/web-app/web-app.html',
-                            controller: 'MovieCtrl as movie',
+                            controller: 'MovieController as movie',
                             resolve: {
                                 moviesListData:  function(MovieService, $stateParams){
                                     return MovieService.getMoviesByType({type: $stateParams.type, genre: $stateParams.genre, page: 1});
@@ -75,7 +85,7 @@ angular
                    views: {
                        '': {
                            templateUrl: 'app/web-app/movie-info/movie-info.html',
-                           controller: 'MovieInfoCtrl as movie'
+                           controller: 'MovieInfoController as movie'
                        }
                    },
                     resolve: {

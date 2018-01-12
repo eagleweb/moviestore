@@ -1,6 +1,6 @@
 angular
     .module('movie-store')
-    .controller('MovieCtrl', ['$stateParams', 'moviesListData', 'MovieService', function ($stateParams, moviesListData, MovieService){
+    .controller('MovieController', ['$rootScope', '$state', '$stateParams', 'moviesListData', 'MovieService', function ($rootScope, $state, $stateParams, moviesListData, MovieService){
 
         var vm = this;
             vm.data = moviesListData.docs;
@@ -24,12 +24,10 @@ angular
                     vm.curentpage = response.page;
                 })
         };
-        
+
         vm.Search = function (searchPhrase) {
-            MovieService.getMovieBySearchPhrase({search: searchPhrase})
-                .then(function (response) {
-                    vm.data = response;
-                })
+            $rootScope.searchPhrase = searchPhrase;
+            $state.go('search');
         }
 
     }]);

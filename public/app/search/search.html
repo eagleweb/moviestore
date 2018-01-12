@@ -1,0 +1,12 @@
+<div class="search-row">
+    <form ng-submit="search.Find(searchPhrase)">
+        <input type="text" ng-model="searchPhrase" placeholder="Search movie">
+    </form>
+</div>
+<div class="content-block">
+    <div class="movie-block" ng-repeat="movies in search.data">
+        <p><img ng-src="{{movies.Poster}}" width="250" height="395"></p>
+        <h4><a ng-bind="movies.Title" ui-sref="movie({movie_id: movies._id})"></a></h4>
+        <p><span ng-bind="movies.Year"></span> | <span ng-bind="movies.Country"></span></p>
+    </div>
+</div>
