@@ -70,7 +70,7 @@ angular
                     views: {
                         '': {
                             templateUrl: 'app/add-movie/add-movie.html',
-                            controller: 'AddMovieController as add'
+                            controller: 'AddMovieController as addmovie'
                         }
                     }
                 })

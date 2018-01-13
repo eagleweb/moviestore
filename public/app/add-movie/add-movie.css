@@ -84,6 +84,14 @@
     box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5);
 }
 
+.add-form .disable button{
+    background: #888;
+}
+
+.add-form .disable button:hover{
+    background: #888;
+}
+
 .add-form input:focus, .add-form textarea:focus {
     outline: 0;
     border: 1px solid #aaa;

@@ -19,6 +19,29 @@ movieRouter.route('/')
             });
         }
 
+    })
+
+    .post(function (req, res) {
+        if (!req.body.title) {
+            res.json({success: false, message: 'Please enter title for movie.'});
+        } else {
+            var newMovie = new Movie({
+                Title: req.body.title,
+                Year: req.body.year,
+                Type: req.body.type,
+                Plot: req.body.plot
+            });
+
+            newMovie.save(function (err) {
+                if (err) {
+                    console.log(err);
+                    if (err.code === 11000) {
+                        return res.json({success: false, message: 'Adding failed. Movie exist.'});
+                    } else res.send(err);
+                }
+                res.json({success: true, message: 'Movie added successfully'});
+            })
+        }
     });
 
 movieRouter.route('/search')

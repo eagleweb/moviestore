@@ -32,10 +32,21 @@ angular
                 })
         }
 
+        function SendMovieToStore(addForm) {
+            return $http.post(config.apiUrl.data, addForm)
+                .then(function (response) {
+                    return response.data;
+                })
+                .catch(function (err) {
+                    console.log('$http get error:' + err);
+                })
+        }
+
         return {
             getMoviesByType: getMoviesByType,
             getMovieByID: getMovieByID,
-            getMovieBySearchPhrase: getMovieBySearchPhrase
+            getMovieBySearchPhrase: getMovieBySearchPhrase,
+            SendMovieToStore: SendMovieToStore
         };
 
     }]);

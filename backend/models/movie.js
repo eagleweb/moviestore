@@ -3,7 +3,7 @@ var mongoosePaginate = require('mongoose-paginate');
 var Schema = mongoose.Schema;
 
 var MovieSchema = new Schema({
-    Title: {type: String, required: true},
+    Title: {type: String, required: true, unique: true},
     Year: {type: String},
     Rated: {type: String},
     Released: {type: String},
@@ -19,8 +19,8 @@ var MovieSchema = new Schema({
     Poster: String,
     Metascore: String,
     imdbRating: {type: String},
-    imdbVotes: String,
-    imdbID: { type: String, required: true, unique: true},
+    imdbVotes: {type: String},
+    imdbID: { type: String},
     Type: {type: String}
 });
 

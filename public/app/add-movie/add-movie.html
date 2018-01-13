@@ -1,17 +1,17 @@
 <div class="add-container">
     <h1>Add movie to Store</h1>
-    <form class="add-form" ng-submit="add.SendToStore(addForm)" ng-init="addForm = {}">
+    <form class="add-form" ng-class="{'hidden': addmovie.hidden}" ng-submit="addmovie.SendToStore(addForm)" ng-init="addForm = {}" ng-show="addmovie.success">
         <fieldset>
             <label>1. Add movie title:</label>
-            <input placeholder="Title" type="text" ng-model="addForm.Title" required autofocus>
+            <input placeholder="Title" type="text" ng-model="addForm.title" required autofocus>
         </fieldset>
         <fieldset>
             <label>2. Add movie year:</label>
-            <input placeholder="Year" type="text" ng-model="addForm.Year">
+            <input placeholder="Year" type="text" ng-model="addForm.year">
         </fieldset>
         <fieldset>
-            <label>3. Choose movie ganre:</label>
-            <select ng-model="addForm.Ganre">
+            <label>3. Choose movie type:</label>
+            <select ng-model="addForm.type">
                 <option value="movie">Movie</option>
                 <option value="animation">Animation</option>
                 <option value="documentary">Documentary</option>
@@ -20,11 +20,18 @@
         </fieldset>
         <fieldset>
             <label for="plot">4. Write description:</label>
-            <textarea id="plot" placeholder="Write something.." ng-model="addForm.Plot"></textarea>
+            <textarea id="plot" placeholder="Write something.." ng-model="addForm.plot"></textarea>
         </fieldset>
-        <fieldset>
-            <label><input type="checkbox" ng-model="rules" />Your are agree with rules</label>
-            <button ng-disabled="rules" name="add" type="submit" data-submit="...adding">Add</button>
+        <fieldset ng-class="{'disable': !checked}">
+            <label><input type="checkbox" ng-model="checked" />I are agree with terms and conditions</label>
+            <button ng-disabled="!checked" type="submit" data-submit="...adding">Add</button>
         </fieldset>
     </form>
+    <div class="add-form try-again" ng-class="{'hidden': addmovie.hidden}" ng-hide="addmovie.success">
+        <p ng-bind="addmovie.message"></p>
+        <button ng-click="addmovie.tryAgain()">Back</button>
+    </div>
+    <div class="add-form try-again" ng-show="addmovie.hidden">
+        <p ng-bind="addmovie.message"></p>
+    </div>
 </div>
