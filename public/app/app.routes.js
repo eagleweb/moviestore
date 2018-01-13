@@ -22,25 +22,25 @@ angular
                     }
                 })
 
-                .state('search', {
-                    url: '/search',
-                    onExit: function($rootScope){
-                        $rootScope.searchPhrase = ' ';
-                    },
-                    views: {
-                        '': {
-                            templateUrl: 'app/search/search.html',
-                            controller: 'SearchController as search'
-                        }
-                    }
-                })
-
                 .state('register', {
                     url: '/register',
                     views: {
                         '': {
                             templateUrl: 'app/register/register.html',
                             controller: 'RegisterController as register'
+                        }
+                    }
+                })
+
+                .state('search', {
+                    url: '/search',
+                    onExit: function($rootScope){
+                        $rootScope.searchPhrase = null;
+                    },
+                    views: {
+                        '': {
+                            templateUrl: 'app/search/search.html',
+                            controller: 'SearchController as search'
                         }
                     }
                 })
@@ -61,6 +61,16 @@ angular
                         '': {
                             templateUrl: 'app/profile/profile.html',
                             controller: 'ProfileController as user'
+                        }
+                    }
+                })
+
+                .state('add-movie', {
+                    url: '/add-movie',
+                    views: {
+                        '': {
+                            templateUrl: 'app/add-movie/add-movie.html',
+                            controller: 'AddMovieController as add'
                         }
                     }
                 })

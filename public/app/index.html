@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="/app/contact/contact-style.css">
     <link rel="stylesheet" href="/app/login/login.css">
     <link rel="stylesheet" href="/app/search/search.css">
+    <link rel="stylesheet" href="/app/add-movie/add-movie.css">
 </head>
 <body>
     <div class="wrapper" ng-controller="RootCtrl as root">
@@ -67,6 +68,7 @@
                     <div class="register"><a ui-sref-active="active" ui-sref="register">Register</a></div>
                 </div>
                 <div ng-if="isAuthenticated">
+                    <div class="header-user_icon"><img src="/assets/img/profile-photo.png" alt=""></div>
                     <div class="header-user_name"><a ui-sref="profile" ng-bind="root.loginName()"></a></div>
                     <div class="logout" ng-click="root.doLogout()">Logout</div>
                 </div>
@@ -105,6 +107,7 @@
     <script src="/app/login/login.controller.js"></script>
     <script src="/app/register/register.controller.js"></script>
     <script src="/app/search/search.controller.js"></script>
+    <script src="/app/add-movie/add-movie.controller.js"></script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDdsW0s_iCCxNY50jmKHtHHBHP5c0y7evs">
     </script>
 </body>

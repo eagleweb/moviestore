@@ -1,0 +1,30 @@
+<div class="add-container">
+    <h1>Add movie to Store</h1>
+    <form class="add-form" ng-submit="add.SendToStore(addForm)" ng-init="addForm = {}">
+        <fieldset>
+            <label>1. Add movie title:</label>
+            <input placeholder="Title" type="text" ng-model="addForm.Title" required autofocus>
+        </fieldset>
+        <fieldset>
+            <label>2. Add movie year:</label>
+            <input placeholder="Year" type="text" ng-model="addForm.Year">
+        </fieldset>
+        <fieldset>
+            <label>3. Choose movie ganre:</label>
+            <select ng-model="addForm.Ganre">
+                <option value="movie">Movie</option>
+                <option value="animation">Animation</option>
+                <option value="documentary">Documentary</option>
+                <option value="tvshows">TV Shows</option>
+            </select>
+        </fieldset>
+        <fieldset>
+            <label for="plot">4. Write description:</label>
+            <textarea id="plot" placeholder="Write something.." ng-model="addForm.Plot"></textarea>
+        </fieldset>
+        <fieldset>
+            <label><input type="checkbox" ng-model="rules" />Your are agree with rules</label>
+            <button ng-disabled="rules" name="add" type="submit" data-submit="...adding">Add</button>
+        </fieldset>
+    </form>
+</div>
