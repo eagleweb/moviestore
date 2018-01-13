@@ -1,6 +1,6 @@
 angular
     .module('movie-store')
-    .controller('MovieInfoCtrl', ['$window', 'movieData', 'UserService', function ($window, movieData, UserService){
+    .controller('MovieInfoController', ['$rootScope', '$state', '$window', 'movieData', 'UserService', function ($rootScope, $state, $window, movieData, UserService){
         var vm = this;
             vm.data = movieData;
             vm.user_id = localStorage.getItem('id');
@@ -20,8 +20,12 @@ angular
                 var key = vm.items[i];
                 store[key] = true;
             }
-
             return(store[vm.data._id]);
+        };
+
+        vm.Search = function (searchPhrase) {
+            $rootScope.searchPhrase = searchPhrase;
+            $state.go('search');
         }
 
     }]);

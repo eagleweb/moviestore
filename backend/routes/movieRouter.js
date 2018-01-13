@@ -23,13 +23,17 @@ movieRouter.route('/')
 
 movieRouter.route('/search')
     .get(function (req, res) {
-
-       Movie.find({ $text : { $search : req.query.search } }, { score : { $meta: "textScore" } })
+        if (req.query.search === undefined || req.query.search === '') {
+            res.json({success: false, message: 'Enter your search request!'});
+        } else
+        Movie.find({ $text : { $search : req.query.search } }, { score : { $meta: "textScore" } })
            .sort({ score : { $meta : 'textScore' } })
            .limit(10)
            .exec(function(err, result) {
                if (err) res.send(err);
-               res.json(result)
+               if (result.length === 0) {
+                   res.json({success: false, message: 'Nothing was found. Sorry! Try another request.'})
+               } else res.json({success: true, result: result})
            });
     });
 

@@ -23,7 +23,6 @@ angular
         }
 
         function getMovieBySearchPhrase(arg) {
-            console.log(typeof arg);
             return $http.get(config.apiUrl.search, {params:{"search": arg.search}})
                 .then(function (response) {
                     return response.data;

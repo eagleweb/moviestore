@@ -24,6 +24,9 @@ angular
 
                 .state('search', {
                     url: '/search',
+                    onExit: function($rootScope){
+                        $rootScope.searchPhrase = ' ';
+                    },
                     views: {
                         '': {
                             templateUrl: 'app/search/search.html',
