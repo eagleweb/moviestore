@@ -6,7 +6,6 @@ var Movie = require('../models/movie');
 
 movieRouter.route('/')
     .get(function (req, res) {
-
         if (req.query.genre === 'all') {
             Movie.paginate({Type: req.query.type}, {page: +req.query.page, limit: 10}, function (err, result) {
                 if (err) res.send(err);
@@ -18,7 +17,6 @@ movieRouter.route('/')
                 res.json(result);
             });
         }
-
     })
 
     .post(function (req, res) {
@@ -42,6 +40,43 @@ movieRouter.route('/')
                 res.json({success: true, message: 'Movie added successfully'});
             })
         }
+    });
+
+movieRouter.route('/sort')
+    .get(function (req, res) {
+        switch (req.query.sort){
+            case 'popular':
+                if (req.query.genre === 'all') {
+                    Movie.paginate({Type: req.query.type}, {sort: {imdbRating: -1}, page: +req.query.page, limit: 10}, function (err, result) {
+                        if (err) res.send(err);
+                        res.json(result);
+                    });
+                } else {
+                    Movie.paginate({Type: req.query.type, Genre: req.query.genre}, {sort: {imdbRating: -1}, page: +req.query.page, limit: 10}, function (err, result) {
+                        if (err) res.send(err);
+                        res.json(result);
+                    });
+                }
+                break;
+            case 'date':
+                if (req.query.genre === 'all') {
+                    Movie.paginate({Type: req.query.type}, {sort: { Released: -1 }, page: +req.query.page, limit: 10}, function (err, result) {
+                        if (err) res.send(err);
+                        res.json(result);
+                    });
+                } else {
+                    Movie.paginate({Type: req.query.type, Genre: req.query.genre}, {sort: { Released: -1 }, page: +req.query.page, limit: 10}, function (err, result) {
+                        if (err) res.send(err);
+                        res.json(result);
+                    });
+                }
+                break;
+        }
+    });
+
+movieRouter.route('/filter')
+    .post(function (req, res) {
+
     });
 
 movieRouter.route('/search')

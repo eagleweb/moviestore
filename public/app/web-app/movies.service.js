@@ -3,7 +3,7 @@ angular
     .factory('MovieService', ['$http', 'config', function ($http, config) {
 
         function getMoviesByType (arg){
-            return $http.get(config.apiUrl.data, {params:{"type": arg.type, "genre": arg.genre, "page": arg.page}})
+            return $http.get(config.apiUrl.data, {params:arg})
                 .then(function (response) {
                     return response.data;
                 })
@@ -14,6 +14,36 @@ angular
         
         function getMovieByID(arg) {
             return $http.get(config.apiUrl.data + arg)
+                .then(function (response) {
+                    return response.data;
+                })
+                .catch(function (err) {
+                    console.log('$http get error:' + err);
+                })
+        }
+
+        function sortMovieByParam(arg) {
+            return $http.get(config.apiUrl.data + 'sort', {params:arg})
+                .then(function (response) {
+                    return response.data;
+                })
+                .catch(function (err) {
+                    console.log('$http get error:' + err);
+                })
+        }
+
+        function filterMovieByParam(arg) {
+            return $http.get(config.apiUrl.data + 'filter', {params:arg})
+                .then(function (response) {
+                    return response.data;
+                })
+                .catch(function (err) {
+                    console.log('$http get error:' + err);
+                })
+        }
+
+        function getTopWatchlist() {
+            return $http.get(config.apiUrl.watchlist + 'popular')
                 .then(function (response) {
                     return response.data;
                 })
@@ -45,6 +75,9 @@ angular
         return {
             getMoviesByType: getMoviesByType,
             getMovieByID: getMovieByID,
+            sortMovieByParam: sortMovieByParam,
+            filterMovieByParam: filterMovieByParam,
+            getTopWatchlist: getTopWatchlist,
             getMovieBySearchPhrase: getMovieBySearchPhrase,
             SendMovieToStore: SendMovieToStore
         };

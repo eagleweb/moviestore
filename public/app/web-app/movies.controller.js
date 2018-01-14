@@ -8,7 +8,7 @@ angular
             vm.curentpage = moviesListData.page;
 
         vm.getNextPage = function () {
-            MovieService.getMoviesByType({type: $stateParams.type, genre: $stateParams.genre, page: ++vm.curentpage})
+            MovieService.getMoviesByType({type: $stateParams.type, genre: $stateParams.genre, page: ++vm.curentpage, sort: vm.sort})
                 .then(function (response) {
                     vm.data = response.docs;
                     vm.totalpages = response.pages;
@@ -17,7 +17,37 @@ angular
         };
 
         vm.getPreviousPage = function () {
-            MovieService.getMoviesByType({type: $stateParams.type, genre: $stateParams.genre, page: --vm.curentpage})
+            MovieService.getMoviesByType({type: $stateParams.type, genre: $stateParams.genre, page: --vm.curentpage, sort: vm.sort})
+                .then(function (response) {
+                    vm.data = response.docs;
+                    vm.totalpages = response.pages;
+                    vm.curentpage = response.page;
+                })
+        };
+
+        vm.sortMovieByParam = function (param) {
+            vm.sort = param;
+            MovieService.sortMovieByParam({type: $stateParams.type, genre: $stateParams.genre, page: 1, sort: param})
+                .then(function (response) {
+                    vm.data = response.docs;
+                    vm.totalpages = response.pages;
+                    vm.curentpage = response.page;
+                })
+        };
+
+        vm.filterMovieByParam = function (filterForm) {
+            var FormFilter = JSON.stringify(filterForm);
+
+            MovieService.filterMovieByParam({type: $stateParams.type, genre: $stateParams.genre, page: 1})
+                .then(function (response) {
+                    vm.data = response.docs;
+                    vm.totalpages = response.pages;
+                    vm.curentpage = response.page;
+                })
+        };
+
+        vm.getTopWatchlist = function () {
+            MovieService.getTopWatchlist()
                 .then(function (response) {
                     vm.data = response.docs;
                     vm.totalpages = response.pages;
