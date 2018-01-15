@@ -2,45 +2,24 @@
     <div class="filter-position">
         <div class="filter">
             <div class="filter-title">Choose filter:</div>
-            <div>
-                <ul>
-                    <li class="filter-item">Ganre
-                        <ul>
-                            <li class="filter-subitem"><label><input type="checkbox">Advanture</label></li>
-                            <li class="filter-subitem"><label><input type="checkbox">Advanture</label></li>
-                            <li class="filter-subitem"><label><input type="checkbox">Advanture</label></li>
-                            <li class="filter-subitem"><label><input type="checkbox">Advanture</label></li>
-                            <li class="filter-subitem"><label><input type="checkbox">Advanture</label></li>
-                        </ul>
-                    </li>
-                    <li class="filter-item">Year
-                        <ul>
-                            <li class="filter-subitem"><label><input type="checkbox">2017</label></li>
-                            <li class="filter-subitem"><label><input type="checkbox">2016</label></li>
-                            <li class="filter-subitem"><label><input type="checkbox">2015</label></li>
-                            <li class="filter-subitem"><label><input type="checkbox">2014</label></li>
-                            <li class="filter-subitem"><label><input type="checkbox">2010-2013</label></li>
-                            <li class="filter-subitem"><label><input type="checkbox">2000-2010</label></li>
-                            <li class="filter-subitem"><label><input type="checkbox">1990-2000</label></li>
-                            <li class="filter-subitem"><label><input type="checkbox">Older</label></li>
-                        </ul>
-                    </li>
-                    <li class="filter-item">Country
-                        <ul>
-                            <li class="filter-subitem"><label><input type="checkbox">USA</label></li>
-                            <li class="filter-subitem"><label><input type="checkbox">France</label></li>
-                            <li class="filter-subitem"><label><input type="checkbox">Italy</label></li>
-                            <li class="filter-subitem"><label><input type="checkbox">Germany</label></li>
-                            <li class="filter-subitem"><label><input type="checkbox">Spain</label></li>
-                            <li class="filter-subitem"><label><input type="checkbox">Ukraine</label></li>
-                            <li class="filter-subitem"><label><input type="checkbox">Japan</label></li>
-                            <li class="filter-subitem"><label><input type="checkbox">India</label></li>
-                            <li class="filter-subitem"><label><input type="checkbox">Australia</label></li>
-                        </ul>
-                    </li>
-                </ul>
-                <button class="filter-button">Filter</button>
-            </div>
+            <form ng-submit="movie.sortMovieByParam(filterForm)" ng-init="filterForm = {}">
+                <fieldset class="filter-item">
+                    <input class="input-tab" id="tab-one" type="radio" name="tabs">
+                    <label class="label-tab" for="tab-one">Year</label>
+                    <div class="tab-content">
+                        <label class="filter-subitem"><input type="radio" ng-model="filterForm.Year" value="2017">2017</label>
+                        <label class="filter-subitem"><input type="radio" ng-model="filterForm.Year" value="2016">2016</label>
+                        <label class="filter-subitem"><input type="radio" ng-model="filterForm.Year" value="2015">2015</label>
+                        <label class="filter-subitem"><input type="radio" ng-model="filterForm.Year" value="2014">2014</label>
+                        <label class="filter-subitem"><input type="radio" ng-model="filterForm.Year" value="2010-2013">2010-2013</label>
+                        <label class="filter-subitem"><input type="radio" ng-model="filterForm.Year" value="2000-2010">2000-2010</label>
+                        <label class="filter-subitem"><input type="radio" ng-model="filterForm.Year" value="1990-2000">1990-2000</label>
+                        <label class="filter-subitem"><input type="radio" ng-model="filterForm.Year" value="old">Older</label>
+                    </div>
+                </fieldset>
+                <button class="filter-button" type="reset">Reset</button>
+                <button class="filter-button" type="submit">Filter</button>
+            </form>
         </div>
     </div>
     <div class="content">

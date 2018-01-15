@@ -26,13 +26,14 @@ angular
         };
 
         vm.sortMovieByParam = function (param) {
-            vm.sort = param;
-            MovieService.sortMovieByParam({type: $stateParams.type, genre: $stateParams.genre, page: 1, sort: param})
-                .then(function (response) {
-                    vm.data = response.docs;
-                    vm.totalpages = response.pages;
-                    vm.curentpage = response.page;
-                })
+            console.log(JSON.stringify(param))
+            // vm.sort = param;
+            // MovieService.sortMovieByParam({type: $stateParams.type, genre: $stateParams.genre, page: 1, sort: param})
+            //     .then(function (response) {
+            //         vm.data = response.docs;
+            //         vm.totalpages = response.pages;
+            //         vm.curentpage = response.page;
+            //     })
         };
 
         vm.filterMovieByParam = function (filterForm) {
