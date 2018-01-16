@@ -26,20 +26,20 @@ angular
         };
 
         vm.sortMovieByParam = function (param) {
-            console.log(JSON.stringify(param))
-            // vm.sort = param;
-            // MovieService.sortMovieByParam({type: $stateParams.type, genre: $stateParams.genre, page: 1, sort: param})
-            //     .then(function (response) {
-            //         vm.data = response.docs;
-            //         vm.totalpages = response.pages;
-            //         vm.curentpage = response.page;
-            //     })
+            vm.sort = param;
+            MovieService.sortMovieByParam({type: $stateParams.type, genre: $stateParams.genre, page: 1, sort: param})
+                .then(function (response) {
+                    vm.data = response.docs;
+                    vm.totalpages = response.pages;
+                    vm.curentpage = response.page;
+                })
         };
 
         vm.filterMovieByParam = function (filterForm) {
-            var FormFilter = JSON.stringify(filterForm);
-
-            MovieService.filterMovieByParam({type: $stateParams.type, genre: $stateParams.genre, page: 1})
+            filterForm.genre = $stateParams.genre;
+            filterForm.type = $stateParams.type;
+            filterForm.page = 1;
+            MovieService.filterMovieByParam(JSON.stringify(filterForm))
                 .then(function (response) {
                     vm.data = response.docs;
                     vm.totalpages = response.pages;

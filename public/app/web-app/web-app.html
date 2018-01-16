@@ -2,22 +2,44 @@
     <div class="filter-position">
         <div class="filter">
             <div class="filter-title">Choose filter:</div>
-            <form ng-submit="movie.sortMovieByParam(filterForm)" ng-init="filterForm = {}">
+            <form ng-submit="movie.filterMovieByParam(filterForm)" ng-init="filterForm = {}">
                 <fieldset class="filter-item">
                     <input class="input-tab" id="tab-one" type="radio" name="tabs">
                     <label class="label-tab" for="tab-one">Year</label>
                     <div class="tab-content">
-                        <label class="filter-subitem"><input type="radio" ng-model="filterForm.Year" value="2017">2017</label>
-                        <label class="filter-subitem"><input type="radio" ng-model="filterForm.Year" value="2016">2016</label>
-                        <label class="filter-subitem"><input type="radio" ng-model="filterForm.Year" value="2015">2015</label>
-                        <label class="filter-subitem"><input type="radio" ng-model="filterForm.Year" value="2014">2014</label>
-                        <label class="filter-subitem"><input type="radio" ng-model="filterForm.Year" value="2010-2013">2010-2013</label>
-                        <label class="filter-subitem"><input type="radio" ng-model="filterForm.Year" value="2000-2010">2000-2010</label>
-                        <label class="filter-subitem"><input type="radio" ng-model="filterForm.Year" value="1990-2000">1990-2000</label>
-                        <label class="filter-subitem"><input type="radio" ng-model="filterForm.Year" value="old">Older</label>
+                        <label class="filter-subitem"><input type="radio" ng-model="filterForm.year" value="2017">2017</label>
+                        <label class="filter-subitem"><input type="radio" ng-model="filterForm.year" value="2016">2016</label>
+                        <label class="filter-subitem"><input type="radio" ng-model="filterForm.year" value="2015">2015</label>
+                        <label class="filter-subitem"><input type="radio" ng-model="filterForm.year" value="2014">2014</label>
+                        <label class="filter-subitem"><input type="radio" ng-model="filterForm.year" value="2010-2013">2010-2013</label>
+                        <label class="filter-subitem"><input type="radio" ng-model="filterForm.year" value="2000-2010">2000-2010</label>
+                        <label class="filter-subitem"><input type="radio" ng-model="filterForm.year" value="1990-2000">1990-2000</label>
+                        <label class="filter-subitem"><input type="radio" ng-model="filterForm.year" value="old">Older</label>
                     </div>
                 </fieldset>
-                <button class="filter-button" type="reset">Reset</button>
+                <fieldset class="filter-item">
+                    <input class="input-tab" id="tab-two" type="radio" name="tabs">
+                    <label class="label-tab" for="tab-two">Country</label>
+                    <div class="tab-content">
+                        <label class="filter-subitem"><input type="radio" ng-model="filterForm.country" value="USA">USA</label>
+                        <label class="filter-subitem"><input type="radio" ng-model="filterForm.country" value="France">France</label>
+                        <label class="filter-subitem"><input type="radio" ng-model="filterForm.country" value="China">China</label>
+                        <label class="filter-subitem"><input type="radio" ng-model="filterForm.country" value="New Zealand">New Zealand</label>
+                        <label class="filter-subitem"><input type="radio" ng-model="filterForm.country" value="UK">UK</label>
+                    </div>
+                </fieldset>
+                <fieldset class="filter-item">
+                    <input class="input-tab" id="tab-three" type="radio" name="tabs">
+                    <label class="label-tab" for="tab-three">Language</label>
+                    <div class="tab-content">
+                        <label class="filter-subitem"><input type="radio" ng-model="filterForm.language" value="English">English</label>
+                        <label class="filter-subitem"><input type="radio" ng-model="filterForm.language" value="Japanese">Japanese</label>
+                        <label class="filter-subitem"><input type="radio" ng-model="filterForm.language" value="Spanish">Spanish</label>
+                        <label class="filter-subitem"><input type="radio" ng-model="filterForm.language" value="German">German</label>
+                        <label class="filter-subitem"><input type="radio" ng-model="filterForm.language" value="Chinese">Chinese</label>
+                    </div>
+                </fieldset>
+                <button class="filter-button" type="reset" ng-click="filterForm = {}">Reset</button>
                 <button class="filter-button" type="submit">Filter</button>
             </form>
         </div>

@@ -32,8 +32,8 @@ angular
                 })
         }
 
-        function filterMovieByParam(arg) {
-            return $http.get(config.apiUrl.data + 'filter', {params:arg})
+        function filterMovieByParam(FormFilter) {
+            return $http.post(config.apiUrl.data + 'filter', FormFilter)
                 .then(function (response) {
                     return response.data;
                 })
