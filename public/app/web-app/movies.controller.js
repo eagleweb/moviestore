@@ -6,6 +6,8 @@ angular
             vm.data = moviesListData.docs;
             vm.totalpages = moviesListData.pages;
             vm.curentpage = moviesListData.page;
+            vm.type = $stateParams.type;
+            vm.genre = $stateParams.genre;
 
         vm.getNextPage = function () {
             MovieService.getMoviesByType({type: $stateParams.type, genre: $stateParams.genre, page: ++vm.curentpage, sort: vm.sort})
@@ -59,6 +61,6 @@ angular
         vm.Search = function (searchPhrase) {
             $rootScope.searchPhrase = searchPhrase;
             $state.go('search');
-        }
+        };
 
     }]);

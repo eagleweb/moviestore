@@ -51,7 +51,7 @@
                     <input type="text" ng-model="searchPhrase" placeholder="Search movie">
                 </form>
             </div>
-            <div class="breadcrumbs"><ui-breadcrumbs displayname-property="data.displayName"></ui-breadcrumbs></div>
+            <div class="breadcrumbs"><a ui-sref="store({type: '{{movie.type}}', genre: 'all'})" ng-bind="movie.type | uppercase"></a> / <span ng-bind="movie.genre | uppercase"></span></div>
             <div class="sort">
                 <div ng-click="movie.sortMovieByParam('popular')" class="tooltip">Popular
                     <span class="tooltip-text">Sort by popular</span>

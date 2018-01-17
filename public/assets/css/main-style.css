@@ -41,6 +41,7 @@
     position: relative;
     border-right: 1px solid #a8aaaf;
     cursor: pointer;
+    line-height: 30px;
 }
 
 .header-menu li:last-child {
@@ -110,11 +111,23 @@
     border-radius: 5px;
     visibility: hidden;
     opacity: 0;
-    transform: translate(-50%, 20px);
+    /*transform: translate(-50%, 20px);*/
     transition: .4s;
 }
 
+.header-menu_submenu::after {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border: 5px solid;
+    border-color: transparent transparent #d8232a transparent;
+}
+
 .header-menu_submenu li {
+    display: block;
+    line-height: 20px;
     border-right: none;
 }
 

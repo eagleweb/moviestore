@@ -77,9 +77,6 @@ angular
 
                 .state('store', {
                     url: '/{type}/{genre}',
-                    data: {
-                        displayName: '{{$stateParams.type | uppercase}} / {{$stateParams.genre | uppercase}}'
-                    },
                     views: {
                         '': {
                             templateUrl: 'app/web-app/web-app.html',
@@ -105,9 +102,6 @@ angular
                         movieData:  function($stateParams, MovieService){
                             return MovieService.getMovieByID($stateParams.movie_id);
                         }
-                    },
-                    data: {
-                        displayName: '{{ movieData.Type | uppercase}} / {{ movieData.Title}}'
                     }
                 });
 

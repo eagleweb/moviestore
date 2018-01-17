@@ -1,5 +1,5 @@
 angular
-    .module('movie-store', ['ui.router', 'angularUtils.directives.uiBreadcrumbs', 'angular-jwt'])
+    .module('movie-store', ['ui.router', 'angular-jwt'])
     .config(config)
     .constant('config', {
         appName: 'MovieStoreApplication',
