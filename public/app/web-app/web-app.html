@@ -72,9 +72,9 @@
             </div>
         </div>
         <div class="pagination" ng-if="movie.totalpages > 1">
-            <button ng-disabled="movie.curentpage == 1" ng-click="movie.getPreviousPage()">&laquo; Previous</button>
+            <button ng-disabled="movie.curentpage == 1" ng-click="movie.paginate(movie.curentpage = movie.curentpage -1)">&laquo; Previous</button>
             <p>{{movie.curentpage}} from {{movie.totalpages}}</p>
-            <button ng-disabled="movie.curentpage == movie.totalpages" ng-click="movie.getNextPage()">Next &raquo;</button>
+            <button ng-disabled="movie.curentpage == movie.totalpages" ng-click="movie.paginate(movie.curentpage = movie.curentpage +1)">Next &raquo;</button>
         </div>
     </div>
 </div>

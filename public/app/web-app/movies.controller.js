@@ -8,28 +8,44 @@ angular
             vm.curentpage = moviesListData.page;
             vm.type = $stateParams.type;
             vm.genre = $stateParams.genre;
+            vm.typeofreq = undefined;
 
-        vm.getNextPage = function () {
-            MovieService.getMoviesByType({type: $stateParams.type, genre: $stateParams.genre, page: ++vm.curentpage, sort: vm.sort})
-                .then(function (response) {
-                    vm.data = response.docs;
-                    vm.totalpages = response.pages;
-                    vm.curentpage = response.page;
-                })
-        };
+        vm.paginate = function (page) {
+            console.log(page);
+            switch (vm.typeofreq){
+                case undefined:
+                    MovieService.getMoviesByType({type: vm.type, genre: vm.genre, page: page})
+                        .then(function (response) {
+                            vm.data = response.docs;
+                            vm.totalpages = response.pages;
+                            vm.curentpage = response.page;
+                        });
+                    break;
+                case 'filter':
+                    vm.filter.page = page;
+                    console.log(vm.filter.page);
+                    MovieService.filterMovieByParam(vm.filter)
+                        .then(function (response) {
+                            vm.data = response.docs;
+                            vm.totalpages = response.pages;
+                            vm.curentpage = response.page;
+                        });
+                    break;
+                case 'sort':
+                    MovieService.sortMovieByParam({type: vm.type, genre: vm.genre, page: page, sort: param})
+                        .then(function (response) {
+                            vm.data = response.docs;
+                            vm.totalpages = response.pages;
+                            vm.curentpage = response.page;
+                        });
+                    break;
 
-        vm.getPreviousPage = function () {
-            MovieService.getMoviesByType({type: $stateParams.type, genre: $stateParams.genre, page: --vm.curentpage, sort: vm.sort})
-                .then(function (response) {
-                    vm.data = response.docs;
-                    vm.totalpages = response.pages;
-                    vm.curentpage = response.page;
-                })
+            }
         };
 
         vm.sortMovieByParam = function (param) {
-            vm.sort = param;
-            MovieService.sortMovieByParam({type: $stateParams.type, genre: $stateParams.genre, page: 1, sort: param})
+            vm.typeofreq = 'sort';
+            MovieService.sortMovieByParam({type: vm.type, genre: vm.genre, page: 1, sort: param})
                 .then(function (response) {
                     vm.data = response.docs;
                     vm.totalpages = response.pages;
@@ -38,10 +54,12 @@ angular
         };
 
         vm.filterMovieByParam = function (filterForm) {
-            filterForm.genre = $stateParams.genre;
-            filterForm.type = $stateParams.type;
+            vm.typeofreq = 'filter';
+            filterForm.genre = vm.genre;
+            filterForm.type = vm.type;
             filterForm.page = 1;
-            MovieService.filterMovieByParam(JSON.stringify(filterForm))
+            vm.filter = filterForm;
+            MovieService.filterMovieByParam(filterForm)
                 .then(function (response) {
                     vm.data = response.docs;
                     vm.totalpages = response.pages;
@@ -50,6 +68,7 @@ angular
         };
 
         vm.getTopWatchlist = function () {
+            vm.typeofreq = undefined;
             MovieService.getTopWatchlist()
                 .then(function (response) {
                     vm.data = response.docs;
