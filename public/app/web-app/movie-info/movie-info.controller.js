@@ -4,23 +4,33 @@ angular
         var vm = this;
             vm.data = movieData;
             vm.user_id = localStorage.getItem('id');
-            vm.items = $window.localStorage.getItem('watchlist');
+
+        UserService.getUser(vm.user_id)
+            .then(function (response) {
+                var store = {};
+                for (var i = 0; i < response.watchlist.length; i++) {
+                    var key = response.watchlist[i];
+                    store[key] = true;
+                }
+                return vm.ismovieinwatchlist = store[vm.data._id];
+            });
 
         vm.addMovieToWatchList = function(){
-            UserService.addMovieToWatchList(vm.user_id, vm.data._id);
+            UserService.addMovieToWatchList(vm.user_id, vm.data._id)
+                .then(function (response) {
+                    if (response.success === true) {
+                        vm.ismovieinwatchlist = true;
+                    } else console.log(response.message);
+                })
         };
 
         vm.removeMovieFromWatchList = function(){
-            UserService.removeMovieFromWatchList(vm.user_id, vm.data._id);
-        };
-
-        vm.isMovieInWatchlist = function () {
-            var store = {};
-            for (var i = 0; i < vm.items.length; i++) {
-                var key = vm.items[i];
-                store[key] = true;
-            }
-            return(store[vm.data._id]);
+            UserService.removeMovieFromWatchList(vm.user_id, vm.data._id)
+                .then(function (response) {
+                    if (response.success === true) {
+                        vm.ismovieinwatchlist = false;
+                    } else console.log(response.message);
+                })
         };
 
         vm.Search = function (searchPhrase) {

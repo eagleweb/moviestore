@@ -9,7 +9,6 @@ angular
         UserService.getUser(vm.user_id)
             .then(function (response) {
                 vm.profile = response;
-                $window.localStorage.setItem('watchlist', response.watchlist);
             })
             .then(function () {
                 UserService.getWatchList(vm.user_id)
@@ -42,8 +41,7 @@ angular
         };
 
         vm.orderByMe = function (propertyName) {
-            vm.reverse = (propertyName !== null && vm.propertyName === propertyName)
-                ? !vm.reverse : false;
+            vm.reverse = (propertyName !== null && vm.propertyName === propertyName) ? !vm.reverse : false;
             vm.propertyName = propertyName;
             vm.watchlist = orderByFilter(vm.watchlist, vm.propertyName, vm.reverse);
         };

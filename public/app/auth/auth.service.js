@@ -20,10 +20,7 @@ angular.
         }
 
         function logout() {
-            localStorage.removeItem('token');
-            localStorage.removeItem('login');
-            localStorage.removeItem('id');
-            localStorage.removeItem('watchlist');
+            localStorage.clear();
             authManager.unauthenticate();
         }
 
