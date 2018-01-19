@@ -50,11 +50,23 @@
 .filter-subitem {
     display: inline-block;
     font-size: 16px;
-    color: #989ca4;
 }
 
 .filter-button {
     float: right;
+    cursor: pointer;
+    border: none;
+    border-radius: 6px;
+    background: #008CBA;
+    color: #FFF;
+    margin: 10px 5px;
+    padding: 8px;
+    font-size: 15px;
+    outline: none;
+}
+
+.filter-button:hover {
+    background: #006b96;
 }
 
 .input-tab {
@@ -204,11 +216,92 @@
 }
 
 .content-block {
-    margin: 0 10px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: baseline;
+    flex-wrap: wrap;
 }
 
 .movie-block{
+    position: relative;
+    max-width: 250px;
+    margin: 10px;
+}
 
+.movie-text {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.7);
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    top: 0;
+    height: 40px;
+    width: 100%;
+}
+
+.poster-img {
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.icon:before {
+    content: '';
+    margin: 0 3px;
+    left: 0;
+    top: 3px;
+    padding-right: 5px;
+    position: relative;
+    display: inline-block;
+}
+
+.movie-like {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 14px;
+    color: white;
+    font-weight: 700
+}
+
+.movie-like:before {
+    content: '';
+    position: relative;
+    display: inline-block;
+    width: 16px; height: 13px;
+    background: url("../../assets/img/css_sprites.png") -163px -329px;
+}
+
+.movie-download {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 14px;
+    color: white;
+    font-weight: 700;
+}
+
+.movie-download:before {
+    width: 15px; height: 15px;
+    background: url("../../assets/img/css_sprites.png") -284px -250px;
+}
+
+.movie-title {
+    font-size: 15px;
+    font-weight: 700;
+    text-align: center;
+    line-height: 20px;
+}
+
+.movie-title a {
+    color: #505050;
+    text-decoration: none;
+}
+
+.movie-title a:hover {
+    text-decoration: underline;
+}
+
+.movie-title p {
+    color: #989ca4;
 }
 
 .pagination {
@@ -233,7 +326,6 @@
 }
 
 .pagination button.active {
-    background-color: #d8232a;
     color: white;
     border-radius: 5px;
 }

@@ -66,9 +66,15 @@
         </div>
         <div class="content-block">
             <div class="movie-block" ng-repeat="movies in movie.data">
-                <p><img ng-src="{{movies.Poster}}" width="250" height="395"></p>
-                <h4><a ng-bind="movies.Title" ui-sref="movie({movie_id: movies._id})"></a></h4>
-                <p><span ng-bind="movies.Year"></span> | <span ng-bind="movies.Country"></span></p>
+                <p><img class="poster-img" ui-sref="movie({movie_id: movies._id})" ng-src="{{movies.Poster}}" width="250" height="395"></p>
+                <div class="movie-text">
+                    <div class="icon movie-like">777</div>
+                    <div class="icon movie-download">555</div>
+                </div>
+                <div class="movie-title">
+                    <a ng-bind="movies.Title" ui-sref="movie({movie_id: movies._id})"></a>
+                    <p><span ng-bind="movies.Year"></span> | <span ng-bind="movies.Country"></span></p>
+                </div>
             </div>
         </div>
         <div class="pagination" ng-if="movie.totalpages > 1">

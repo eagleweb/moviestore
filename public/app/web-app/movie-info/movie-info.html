@@ -13,7 +13,7 @@
             <div><h1 ng-bind="movie.data.Title"></h1></div>
             <div ng-if="isAuthenticated">
                 <button ng-if="!movie.isMovieInWatchlist()" ng-click="movie.addMovieToWatchList()">Add</button>
-                <button ng-if="movie.isMovieInWatchlist()" ng-click="movie.removeMovieFromWatchList()">Add</button>
+                <button ng-if="movie.isMovieInWatchlist()" ng-click="movie.removeMovieFromWatchList()">Remove</button>
             </div>
         </div>
     </div>
