@@ -1,6 +1,6 @@
-<div class="container">
-    <div class="content">
-        <div class="search-row">
+<div class="movie-info-container">
+    <div class="movie-info-content">
+        <div class="search-row movie-info-search-row">
             <div class="breadcrumbs"><a ui-sref="store({type: '{{movie.data.Type}}', genre: 'all'})" ng-bind="movie.data.Type | uppercase"></a> / <span ng-bind="movie.data.Title"></span></div>
             <div class="search">
                 <form ng-submit="movie.Search(searchPhrase)">
@@ -8,12 +8,71 @@
                 </form>
             </div>
         </div>
-        <div class="content-block">
-            <div><p><img ng-src="{{movie.data.Poster}}"></p></div>
-            <div><h1 ng-bind="movie.data.Title"></h1></div>
-            <div ng-if="isAuthenticated">
-                <button ng-if="!movie.ismovieinwatchlist" ng-click="movie.addMovieToWatchList()">Add</button>
-                <button ng-if="movie.ismovieinwatchlist" ng-click="movie.removeMovieFromWatchList()">Remove</button>
+        <div class="movie-info-row">
+            <div class="movie-info-title"><h1 ng-bind="movie.data.Title"></h1></div>
+            <div class="movie-info-watchlist" ng-if="isAuthenticated">
+                <span>Watch latter:</span>
+                <button class="add" ng-if="!movie.ismovieinwatchlist" ng-click="movie.addMovieToWatchList()">Add</button>
+                <button class="remove" ng-if="movie.ismovieinwatchlist" ng-click="movie.removeMovieFromWatchList()">Remove</button>
+            </div>
+        </div>
+        <div class="movie-info-block">
+            <div class="first-column">
+                <div class="movie-info-poster"><img ng-src="{{movie.data.Poster}}"></div>
+                <div>IMDb: <span ng-bind="movie.data.imdbRating"></span></div>
+                <div>IMDb votes: <span ng-bind="movie.data.imdbVotes"></span></div>
+                <div>Year: <span ng-bind="movie.data.Year"></span></div>
+                <div>Country: <span ng-bind="movie.data.Country"></span></div>
+                <div>Runtime: <span ng-bind="movie.data.Runtime"></span></div>
+                <div>Language: <span ng-bind="movie.data.Language"></span></div>
+                <div>Released: <span ng-bind="movie.data.Released"></span></div>
+            </div>
+            <div class="second-column">
+                <div class="movie-info-trailer"></div>
+                <div class="movie-overview">
+                    <span>Overview</span>
+                    <p ng-bind="movie.data.Plot"></p>
+                </div>
+                <div class="movie-info-gallery">
+                    <span>Screenshots</span>
+                    <div class="gallery-row">
+                        <div class="gallery-column">
+                            <img src="../../../assets/img/gallery/1.jpg" ng-click="movie.openModal(); movie.currentSlide(1)" class="hover-shadow">
+                        </div>
+                        <div class="gallery-column">
+                            <img src="../../../assets/img/gallery/2.jpg" ng-click="movie.openModal(); movie.currentSlide(2)" class="hover-shadow">
+                        </div>
+                        <div class="gallery-column">
+                            <img src="../../../assets/img/gallery/3.jpg" ng-click="movie.openModal(); movie.currentSlide(3)" class="hover-shadow">
+                        </div>
+                        <div class="gallery-column">
+                            <img src="../../../assets/img/gallery/4.jpg" ng-click="movie.openModal(); movie.currentSlide(4)" class="hover-shadow">
+                        </div>
+                    </div>
+                    <div id="gallery-modal" class="gallery-modal">
+                        <span class="close cursor" ng-click="movie.closeModal()">&times;</span>
+                        <div class="modal-content">
+                            <div class="gallery-slide">
+                                <div class="number-text">1 / 4</div>
+                                <img src="../../../assets/img/gallery/1.jpg">
+                            </div>
+                            <div class="gallery-slide">
+                                <div class="number-text">2 / 4</div>
+                                <img src="../../../assets/img/gallery/2.jpg">
+                            </div>
+                            <div class="gallery-slide">
+                                <div class="number-text">3 / 4</div>
+                                <img src="../../../assets/img/gallery/3.jpg">
+                            </div>
+                            <div class="gallery-slide">
+                                <div class="number-text">4 / 4</div>
+                                <img src="../../../assets/img/gallery/4.jpg">
+                            </div>
+                            <a class="prev" ng-click="movie.plusSlides(-1)">&#10094;</a>
+                            <a class="next" ng-click="movie.plusSlides(1)">&#10095;</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

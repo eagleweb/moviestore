@@ -5,7 +5,7 @@ angular
         var vm = this;
 
         vm.page = function (){
-            return ($state.is('store') || $state.is('movie'));
+            return ($state.is('store'));
         };
 
         vm.doLogout = function () {
