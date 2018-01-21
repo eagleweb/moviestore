@@ -86,6 +86,10 @@
     color: #989ca4;
 }
 
+.second-column {
+    margin-bottom: 20px;
+}
+
 .movie-info-trailer {
     height: 445px;
     width: 800px;
@@ -96,6 +100,7 @@
 .movie-overview span {
     color: #505050;
     font-weight: 700;
+    margin-bottom: 10px;
 }
 
 .movie-overview p{
@@ -106,7 +111,7 @@
     line-height: 20px;
     font-style: oblique;
     color: #989ca4;
-    margin-bottom: 15px;
+    margin: 15px 0;
 }
 
 .movie-info-gallery span {
