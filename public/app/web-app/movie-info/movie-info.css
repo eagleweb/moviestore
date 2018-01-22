@@ -91,10 +91,9 @@
     margin-bottom: 20px;
 }
 
-.movie-info-trailer {
+.movie-info-trailer video{
     height: 445px;
     width: 800px;
-    border: 1px solid black;
     margin-bottom: 20px;
 }
 

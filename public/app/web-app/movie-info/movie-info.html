@@ -28,7 +28,12 @@
                 <div>Released: <span ng-bind="movie.data.Released"></span></div>
             </div>
             <div class="second-column">
-                <div class="movie-info-trailer"></div>
+                <div class="movie-info-trailer">
+                    <video controls>
+                        <source src="" type="video/mp4">
+                        Your browser does not support HTML5 video.
+                    </video>
+                </div>
                 <div class="movie-overview">
                     <span>Overview</span>
                     <p ng-bind="movie.data.Plot"></p>
