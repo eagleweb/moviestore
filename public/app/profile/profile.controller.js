@@ -15,9 +15,6 @@ angular
                     .then(function (response) {
                         vm.watchlist = response;
                     })
-                    .catch(function (err) {
-                        console.log(err);
-                    });
             })
             .catch(function (err) {
                 console.log(err);
@@ -30,9 +27,6 @@ angular
                     UserService.getWatchList(vm.user_id)
                         .then(function (response) {
                             vm.watchlist = response;
-                        })
-                        .catch(function (err) {
-                            console.log(err);
                         })
                 })
                 .catch(function (err) {
