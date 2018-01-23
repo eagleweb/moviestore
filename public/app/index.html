@@ -22,42 +22,105 @@
         <header class="header" ng-class="{'header-fixed': root.page()}">
             <div class="header-logo"><a ui-sref="home"><img src="/assets/img/logo.png" alt="Movie Store"></a></div>
             <nav>
+                <input type="checkbox" id="menu" class="hidden-menu-ticker">
+                <label class="btn-menu" for="menu">
+                    <span class="first-span"></span>
+                    <span class="second-span"></span>
+                    <span class="third-span"></span>
+                </label>
                 <ul class="header-menu">
                     <li class="header-menu_item item_movie">
                         <a ui-sref-active="active" ui-sref="store({type: 'movie', genre: 'all'})">Movies</a>
                         <ul class="header-menu_submenu">
-                            <li><a href="#">Action</a></li>
-                            <li><a href="#">Adventure</a></li>
-                            <li><a href="#">Comedy</a></li>
-                            <li><a href="#">Crime</a></li>
-                            <li><a href="#">Drama</a></li>
-                            <li><a href="#">Family</a></li>
-                            <li><a href="#">Fantasy</a></li>
-                            <li><a href="#">Film-Noir</a></li>
+                            <li><a ui-sref="store({type: 'movie', genre: 'Action'})">Action</a></li>
+                            <li><a ui-sref="store({type: 'movie', genre: 'Adventure'})">Adventure</a></li>
+                            <li><a ui-sref="store({type: 'movie', genre: 'Biography'})">Biography</a></li>
+                            <li><a ui-sref="store({type: 'movie', genre: 'Comedy'})">Comedy</a></li>
+                            <li><a ui-sref="store({type: 'movie', genre: 'Crime'})">Crime</a></li>
+                            <li><a ui-sref="store({type: 'movie', genre: 'Drama'})">Drama</a></li>
+                            <li><a ui-sref="store({type: 'movie', genre: 'Family'})">Family</a></li>
+                            <li><a ui-sref="store({type: 'movie', genre: 'Fantasy'})">Fantasy</a></li>
+                            <li><a ui-sref="store({type: 'movie', genre: 'Film-Noir'})">Film-Noir</a></li>
+                            <li><a ui-sref="store({type: 'movie', genre: 'History'})">History</a></li>
+                            <li><a ui-sref="store({type: 'movie', genre: 'Horror'})">Horror</a></li>
+                            <li><a ui-sref="store({type: 'movie', genre: 'Music'})">Music</a></li>
+                            <li><a ui-sref="store({type: 'movie', genre: 'Musical'})">Musical</a></li>
+                            <li><a ui-sref="store({type: 'movie', genre: 'Mystery'})">Mystery</a></li>
+                            <li><a ui-sref="store({type: 'movie', genre: 'Romance'})">Romance</a></li>
+                            <li><a ui-sref="store({type: 'movie', genre: 'Sci-Fi'})">Sci-Fi</a></li>
+                            <li><a ui-sref="store({type: 'movie', genre: 'Sport'})">Sport</a></li>
+                            <li><a ui-sref="store({type: 'movie', genre: 'Thriller'})">Thriller</a></li>
+                            <li><a ui-sref="store({type: 'movie', genre: 'War'})">War</a></li>
+                            <li><a ui-sref="store({type: 'movie', genre: 'Western'})">Western</a></li>
                         </ul>
                     </li>
                     <li class="header-menu_item item_animation">
                         <a ui-sref-active="active" ui-sref="store({type: 'animation', genre: 'all'})">Animation</a>
                         <ul class="header-menu_submenu">
-                            <li><a href="#">Adventure</a></li>
-                            <li><a href="#">Adventure</a></li>
-                            <li><a href="#">Adventure</a></li>
+                            <li><a ui-sref="store({type: 'animation', genre: 'Adventure'})">Adventure</a></li>
+                            <li><a ui-sref="store({type: 'animation', genre: 'Comedy'})">Comedy</a></li>
+                            <li><a ui-sref="store({type: 'animation', genre: 'Crime'})">Crime</a></li>
+                            <li><a ui-sref="store({type: 'animation', genre: 'Drama'})">Drama</a></li>
+                            <li><a ui-sref="store({type: 'animation', genre: 'Family'})">Family</a></li>
+                            <li><a ui-sref="store({type: 'animation', genre: 'Fantasy'})">Fantasy</a></li>
                         </ul>
                     </li>
                     <li class="header-menu_item item_documentary">
                         <a ui-sref-active="active" ui-sref="store({type: 'documentary', genre: 'all'})">Documentary</a>
                         <ul class="header-menu_submenu">
-                            <li><a href="#">Adventure</a></li>
-                            <li><a href="#">Adventure</a></li>
-                            <li><a href="#">Adventure</a></li>
+                            <li><a ui-sref="store({type: 'documentary', genre: 'Animation'})">Animation</a></li>
+                            <li><a ui-sref="store({type: 'documentary', genre: 'Biography'})">Biography</a></li>
+                            <li><a ui-sref="store({type: 'documentary', genre: 'Comedy'})">Comedy</a></li>
+                            <li><a ui-sref="store({type: 'documentary', genre: 'Crime'})">Crime</a></li>
+                            <li><a ui-sref="store({type: 'documentary', genre: 'Documentary'})">Documentary</a></li>
+                            <li><a ui-sref="store({type: 'documentary', genre: 'Drama'})">Drama</a></li>
+                            <li><a ui-sref="store({type: 'documentary', genre: 'Family'})">Family</a></li>
+                            <li><a ui-sref="store({type: 'documentary', genre: 'Fantasy'})">Fantasy</a></li>
+                            <li><a ui-sref="store({type: 'documentary', genre: 'Game-Show'})">Game-Show</a></li>
+                            <li><a ui-sref="store({type: 'documentary', genre: 'History'})">History</a></li>
+                            <li><a ui-sref="store({type: 'documentary', genre: 'Horror'})">Horror</a></li>
+                            <li><a ui-sref="store({type: 'documentary', genre: 'Music'})">Music</a></li>
+                            <li><a ui-sref="store({type: 'documentary', genre: 'Musical'})">Musical</a></li>
+                            <li><a ui-sref="store({type: 'documentary', genre: 'Mystery'})">Mystery</a></li>
+                            <li><a ui-sref="store({type: 'documentary', genre: 'News'})">News</a></li>
+                            <li><a ui-sref="store({type: 'documentary', genre: 'Reality-TV'})">Reality-TV</a></li>
+                            <li><a ui-sref="store({type: 'documentary', genre: 'Romance'})">Romance</a></li>
+                            <li><a ui-sref="store({type: 'documentary', genre: 'Sci-Fi'})">Sci-Fi</a></li>
+                            <li><a ui-sref="store({type: 'documentary', genre: 'Short'})">Short</a></li>
+                            <li><a ui-sref="store({type: 'documentary', genre: 'Talk-Show'})">Talk-Show</a></li>
+                            <li><a ui-sref="store({type: 'documentary', genre: 'Thriller'})">Thriller</a></li>
+                            <li><a ui-sref="store({type: 'documentary', genre: 'War'})">War</a></li>
+                            <li><a ui-sref="store({type: 'documentary', genre: 'Western'})">Western</a></li>
                         </ul>
                     </li>
                     <li class="header-menu_item item_tvshow">
                         <a ui-sref-active="active" ui-sref="store({type: 'tvshows', genre: 'all'})">TV Shows</a>
                         <ul class="header-menu_submenu">
-                            <li><a href="#">Adventure</a></li>
-                            <li><a href="#">Adventure</a></li>
-                            <li><a href="#">Adventure</a></li>
+                            <li><a ui-sref="store({type: 'tvshows', genre: 'Action'})">Action</a></li>
+                            <li><a ui-sref="store({type: 'tvshows', genre: 'Adventure'})">Adventure</a></li>
+                            <li><a ui-sref="store({type: 'tvshows', genre: 'Animation'})">Animation</a></li>
+                            <li><a ui-sref="store({type: 'tvshows', genre: 'Biography'})">Biography</a></li>
+                            <li><a ui-sref="store({type: 'tvshows', genre: 'Comedy'})">Comedy</a></li>
+                            <li><a ui-sref="store({type: 'tvshows', genre: 'Crime'})">Crime</a></li>
+                            <li><a ui-sref="store({type: 'tvshows', genre: 'Drama'})">Drama</a></li>
+                            <li><a ui-sref="store({type: 'tvshows', genre: 'Family'})">Family</a></li>
+                            <li><a ui-sref="store({type: 'tvshows', genre: 'Fantasy'})">Fantasy</a></li>
+                            <li><a ui-sref="store({type: 'tvshows', genre: 'Game-Show'})">Game-Show</a></li>
+                            <li><a ui-sref="store({type: 'tvshows', genre: 'History'})">History</a></li>
+                            <li><a ui-sref="store({type: 'tvshows', genre: 'Horror'})">Horror</a></li>
+                            <li><a ui-sref="store({type: 'tvshows', genre: 'Music'})">Music</a></li>
+                            <li><a ui-sref="store({type: 'tvshows', genre: 'Musical'})">Musical</a></li>
+                            <li><a ui-sref="store({type: 'tvshows', genre: 'Mystery'})">Mystery</a></li>
+                            <li><a ui-sref="store({type: 'tvshows', genre: 'News'})">News</a></li>
+                            <li><a ui-sref="store({type: 'tvshows', genre: 'Reality-TV'})">Reality-TV</a></li>
+                            <li><a ui-sref="store({type: 'tvshows', genre: 'Romance'})">Romance</a></li>
+                            <li><a ui-sref="store({type: 'tvshows', genre: 'Sci-Fi'})">Sci-Fi</a></li>
+                            <li><a ui-sref="store({type: 'tvshows', genre: 'Short'})">Short</a></li>
+                            <li><a ui-sref="store({type: 'tvshows', genre: 'Sport'})">Sport</a></li>
+                            <li><a ui-sref="store({type: 'tvshows', genre: 'Talk-Show'})">Talk-Show</a></li>
+                            <li><a ui-sref="store({type: 'tvshows', genre: 'Thriller'})">Thriller</a></li>
+                            <li><a ui-sref="store({type: 'tvshows', genre: 'War'})">War</a></li>
+                            <li><a ui-sref="store({type: 'tvshows', genre: 'Western'})">Western</a></li>
                         </ul>
                     </li>
                 </ul>

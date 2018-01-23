@@ -10,11 +10,13 @@
 .movie-info-row {
     display: flex;
     justify-content: space-between;
+    align-items: baseline;
     flex-wrap: wrap;
-    padding-bottom: 20px;
+    padding-bottom: 10px;
 }
 
 .movie-info-title h1 {
+    padding-left: 70px;
     font-size: 25px;
     font-weight: 700;
     color: #505050;
@@ -58,14 +60,16 @@
 
 .movie-info-block {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: flex-start;
     flex-wrap: wrap;
 }
 
-.first-column div{
+.first-column {
+    max-width: 350px;
     color: #505050;
     font-weight: 700;
+    margin: 0 30px 20px 0;
 }
 
 .first-column div:nth-child(2) {
@@ -83,17 +87,15 @@
     font-size: 18px;
     line-height: 30px;
     font-style: oblique;
-    color: #989ca4;
 }
 
 .second-column {
     margin-bottom: 20px;
 }
 
-.movie-info-trailer {
+.movie-info-trailer video{
     height: 445px;
     width: 800px;
-    border: 1px solid black;
     margin-bottom: 20px;
 }
 
@@ -110,7 +112,7 @@
     font-size: 18px;
     line-height: 20px;
     font-style: oblique;
-    color: #989ca4;
+    color: #505050;
     margin: 15px 0;
 }
 

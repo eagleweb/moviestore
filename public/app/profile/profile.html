@@ -5,16 +5,14 @@
                     <div class="profile-login">Login: <span ng-bind="user.profile.login"></span></div>
                     <div class="profile-name">Name: <span ng-bind="user.profile.name"></span></div>
                     <div class="profile-email">E-mail: <span ng-bind="user.profile.email"></span></div>
-                    <a ui-sref="add-movie"><button class="edit-profile">Add movie to store</button></a>
+                    <a ui-sref="add-movie"><button class="addmovie-profile">Add movie to store</button></a>
                     <!--<button class="delete-profile">Delete profile</button>-->
                 </div>
             </div>
             <div class="watch-list">
-                <h2>Your Watch List:</h2>
+                <h2>Your WatchList:</h2>
                 <form>
-                    <div>
-                        <input type="text" ng-model="searchKeyword" placeholder="Search">
-                    </div>
+                    <input class="profile-search" type="text" ng-model="searchKeyword" placeholder="Search">
                 </form>
                 <table class="watch-list-table">
                     <tr>

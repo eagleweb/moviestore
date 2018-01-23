@@ -51,17 +51,23 @@
     transform: scale(1.1);
 }
 
-.edit-profile {
+.addmovie-profile {
     background: #008CBA;
-}
-
-.delete-profile {
-    background: #d8232a;
 }
 
 .watch-list {
     max-width: 1000px;
     margin: 20px auto 0 auto;
+}
+
+.profile-search {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
 }
 
 .watch-list h2 {
@@ -73,7 +79,8 @@
 .watch-list-table {
     border-collapse: collapse;
     width: 100%;
-    margin-top: 10px;
+    margin: 10px 0;
+    color: #3f444e;
 }
 
 .watch-list-table td, .watch-list-table th {
@@ -91,13 +98,35 @@
 }
 
 .watch-list-table th {
-    padding: 12px 0;
-    background-color: #4CAF50;
-    color: white;
-    cursor: pointer;
+     padding: 12px 0;
+     background-color: #4CAF50;
+     color: white;
+     cursor: pointer;
 }
 
-/*arrow on userpage*/
+.watch-list-table button {
+    padding: 0 10px;
+    border-radius: 4px;
+    background-color: #d8232a;
+    color: white;
+    cursor: pointer;
+    outline: none;
+    border: none;
+}
+
+.watch-list-table button:hover {
+    background-color: #751c1f;
+}
+
+.watch-list-table a {
+    color: #3f444e;
+    text-decoration: none;
+}
+
+.watch-list-table a:hover {
+    text-decoration: underline;
+}
+
 .sort-order:after {
     content: '\25b2';
 }
@@ -105,7 +134,35 @@
     content: '\25bc';
 }
 
+@media only screen and (max-width : 480px) {
+    .profile-photo {
+        padding: 0 10px;
+    }
 
+    .profile-data {
+        font-size: 15px;
+        line-height: 20px;
+        font-weight: 600;
+    }
+
+    .profile-data span{
+        font-size: 14px;
+        font-weight: 400;
+    }
+
+    .watch-list h2 {
+        font-size: 16px;
+        padding: 0 10px;
+    }
+}
+
+@media only screen and (min-width: 481px) and (max-width: 767px) {
+
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+
+}
 
 
 
