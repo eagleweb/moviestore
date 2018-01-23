@@ -370,11 +370,11 @@
         -webkit-backface-visibility: hidden;
     }
 
-    .hidden-menu-ticker {
+    .hidden-filter-ticker {
         display: none;
     }
 
-    .btn-menu {
+    .filter-btn-menu {
         color: #fff;
         background-color: #fff;
         padding: 2px;
@@ -389,7 +389,7 @@
         -webkit-backface-visibility: hidden;
     }
 
-    .btn-menu span {
+    .filter-btn-menu span {
         display: block;
         height: 2px;
         background-color: #2b343c;
@@ -398,28 +398,28 @@
         position: relative;
     }
 
-    .btn-menu span.first-span {
+    .filter-btn-menu span.first-span {
         margin-top: 0;
     }
 
-    .hidden-menu-ticker:checked ~ .btn-menu {
+    .hidden-filter-ticker:checked ~ .filter-btn-menu {
         left: 160px;
         background-color: #2b343c;
     }
 
-    .hidden-menu-ticker:checked ~ .filter-position {
+    .hidden-filter-ticker:checked ~ .filter-position {
         left: 0;
     }
-    .hidden-menu-ticker:checked ~ .btn-menu span.first-span {
+    .hidden-filter-ticker:checked ~ .filter-btn-menu span.first-span {
         -webkit-transform: rotate(45deg);
         top: 7px;
         background-color: #fff;
     }
-    .hidden-menu-ticker:checked ~ .btn-menu span.second-span {
+    .hidden-filter-ticker:checked ~ .filter-btn-menu span.second-span {
         opacity: 0;
     }
 
-    .hidden-menu-ticker:checked ~ .btn-menu span.third-span {
+    .hidden-filter-ticker:checked ~ .filter-btn-menu span.third-span {
         -webkit-transform: rotate(-45deg);
         top: -7px;
         background-color: #fff;
