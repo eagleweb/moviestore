@@ -134,7 +134,35 @@
     content: '\25bc';
 }
 
+@media only screen and (max-width : 480px) {
+    .profile-photo {
+        padding: 0 10px;
+    }
 
+    .profile-data {
+        font-size: 15px;
+        line-height: 20px;
+        font-weight: 600;
+    }
+
+    .profile-data span{
+        font-size: 14px;
+        font-weight: 400;
+    }
+
+    .watch-list h2 {
+        font-size: 16px;
+        padding: 0 10px;
+    }
+}
+
+@media only screen and (min-width: 481px) and (max-width: 767px) {
+
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+
+}
 
 
 
