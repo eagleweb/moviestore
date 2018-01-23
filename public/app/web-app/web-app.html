@@ -1,4 +1,10 @@
 <div class="movie-container">
+    <input type="checkbox" id="filter" class="hidden-menu-ticker">
+    <label class="btn-menu" for="filter">
+        <span class="first-span"></span>
+        <span class="second-span"></span>
+        <span class="third-span"></span>
+    </label>
     <div class="filter-position">
         <div class="filter">
             <div class="filter-title">Choose filter:</div>
@@ -66,7 +72,7 @@
         </div>
         <div class="content-block">
             <div class="movie-block" ng-repeat="movies in movie.data">
-                <p><img class="poster-img" ui-sref="movie({movie_id: movies._id})" ng-src="{{movies.Poster}}" width="250" height="395"></p>
+                <p><img class="poster-img" ui-sref="movie({movie_id: movies._id})" ng-src="{{movies.Poster}}"></p>
                 <div class="movie-text">
                     <div class="icon movie-like">777</div>
                     <div class="icon movie-download">555</div>

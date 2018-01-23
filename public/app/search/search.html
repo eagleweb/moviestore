@@ -1,12 +1,13 @@
 <div class="search-container">
     <div>
         <form ng-submit="search.Find(searchPhrase)">
+            <label>Find what you want:</label>
             <input class="search-input" type="text" ng-model="searchPhrase" placeholder="Search movie">
         </form>
     </div>
     <div class="search-block" ng-show="search.success">
         <div class="movie-block" ng-repeat="movies in search.data">
-            <p><img class="poster-img" ui-sref="movie({movie_id: movies._id})" ng-src="{{movies.Poster}}" width="250" height="395"></p>
+            <p><img class="poster-img" ui-sref="movie({movie_id: movies._id})" ng-src="{{movies.Poster}}"></p>
             <div class="movie-text">
                 <div class="icon movie-like">777</div>
                 <div class="icon movie-download">555</div>

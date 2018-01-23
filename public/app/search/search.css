@@ -1,12 +1,11 @@
-.search-container {
-    /*display: flex;*/
-    /*flex-direction: column;*/
-    /*justify-content: flex-start;*/
-    /*align-items: center;*/
-}
-
 .search-container form, .search-message{
     text-align: center;
+}
+
+.search-container label {
+    font-size: 15px;
+    font-weight: 700;
+    color: #505050;
 }
 
 .search-input {
