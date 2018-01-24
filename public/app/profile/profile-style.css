@@ -150,22 +150,59 @@
         font-weight: 400;
     }
 
-    .profile-search {
-        margin: 8px 10px;
+    .watch-list {
+        margin: 10px 5px;
     }
 
     .watch-list h2 {
         font-size: 16px;
         padding: 0 10px;
     }
+
+    .watch-list-table th:nth-child(4) {
+        display: none;
+    }
+
+    .watch-list-table td:nth-child(4) {
+        display: none;
+    }
+
+    .watch-list-table th {
+        padding: 12px 5px;
+    }
 }
 
 @media only screen and (min-width: 481px) and (max-width: 767px) {
+    .profile-photo {
+        padding: 0 10px;
+    }
 
+    .watch-list {
+        margin: 10px 5px;
+    }
+
+    .watch-list h2 {
+        font-size: 16px;
+        padding: 0 10px;
+    }
+
+    .watch-list-table th:nth-child(4) {
+        display: none;
+    }
+
+    .watch-list-table td:nth-child(4) {
+        display: none;
+    }
+
+    .watch-list-table th {
+        padding: 12px 5px;
+    }
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
-
+    .watch-list {
+        margin: 10px 5px;
+    }
 }
 
 

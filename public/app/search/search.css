@@ -25,3 +25,19 @@
     align-items: flex-start;
     flex-wrap: wrap;
 }
+
+@media only screen and (max-width : 480px) {
+
+    .search-container label {
+        margin-top: 10px;
+    }
+}
+
+@media only screen and (min-width: 481px) and (max-width: 767px) {
+
+
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+
+}
