@@ -94,8 +94,10 @@
 }
 
 .movie-info-trailer video{
-    height: 445px;
-    width: 800px;
+    max-height: 445px;
+    height: 100%;
+    max-width: 800px;
+    width: 100%;
     margin-bottom: 20px;
 }
 
@@ -224,8 +226,53 @@ img.hover-shadow {
 }
 
 @media only screen and (max-width : 480px) {
+    .movie-info-row {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+    }
 
+    .movie-info-title h1 {
+        padding-left: 0;
+    }
 
+    .movie-info-block {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .first-column {
+        margin: 0;
+    }
+
+    .movie-info-poster {
+        padding: 0;
+    }
+
+    .movie-overview span {
+        margin: 0 0 10px 20px;
+    }
+
+    .movie-overview p{
+        margin: 15px 10px;
+    }
+
+    .movie-info-gallery span {
+        padding-left: 20px;
+    }
+
+    .gallery-row {
+        max-width: 350px;
+    }
+
+    .gallery-column {
+        width: 50%;
+    }
+
+    .gallery-column img{
+        width: 150px;
+    }
 }
 
 @media only screen and (min-width: 481px) and (max-width: 767px) {
