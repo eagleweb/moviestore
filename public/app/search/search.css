@@ -12,7 +12,7 @@
     width: 100%;
     max-width: 600px;
     padding: 12px 20px;
-    margin: 8px 0;
+    margin: 8px 5px;
     display: inline-block;
     border: 1px solid #ccc;
     border-radius: 4px;
@@ -24,20 +24,35 @@
     justify-content: center;
     align-items: flex-start;
     flex-wrap: wrap;
+    max-width: 1100px;
+    margin: auto;
 }
 
 @media only screen and (max-width : 480px) {
 
-    .search-container label {
-        margin-top: 10px;
+    .search-form {
+        padding-top: 10px;
+    }
+
+    .search-input {
+        width: 90%;
     }
 }
 
 @media only screen and (min-width: 481px) and (max-width: 767px) {
 
+    .search-form {
+        padding-top: 10px;
+    }
 
+    .search-input {
+        width: 90%;
+    }
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
 
+    .search-form {
+        padding-top: 10px;
+    }
 }
