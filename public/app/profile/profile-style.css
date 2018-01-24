@@ -150,6 +150,10 @@
         font-weight: 400;
     }
 
+    .profile-search {
+        margin: 8px 10px;
+    }
+
     .watch-list h2 {
         font-size: 16px;
         padding: 0 10px;

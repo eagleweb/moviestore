@@ -259,7 +259,7 @@ footer{
 
     .header-menu {
         display: block;
-        position: absolute;
+        position: fixed;
         list-style:none;
         padding: 30px 10px 0 20px;
         margin: 0;
@@ -366,7 +366,7 @@ footer{
 
     .header-menu {
         display: block;
-        position: absolute;
+        position: fixed;
         list-style:none;
         padding: 30px 10px 0 20px;
         margin: 0;
