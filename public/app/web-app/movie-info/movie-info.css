@@ -233,6 +233,7 @@ img.hover-shadow {
     }
 
     .movie-info-title h1 {
+        font-size: 20px;
         padding-left: 0;
     }
 
@@ -264,6 +265,7 @@ img.hover-shadow {
 
     .gallery-row {
         max-width: 350px;
+        margin: 10px;
     }
 
     .gallery-column {
@@ -272,6 +274,7 @@ img.hover-shadow {
 
     .gallery-column img{
         width: 150px;
+        height: 100px;
     }
 }
 
