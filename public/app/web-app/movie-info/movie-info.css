@@ -98,7 +98,9 @@
     height: 100%;
     max-width: 800px;
     width: 100%;
-    margin-bottom: 20px;
+    padding: 0 5px;
+    margin: 10px 0 20px 0;
+    box-sizing: border-box;
 }
 
 .movie-overview span {
@@ -124,18 +126,17 @@
 }
 
 .gallery-row {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
     max-width: 800px;
-    margin: 10px 0;
-}
-
-.gallery-column {
-    width: 25%;
-    float: left;
 }
 
 .gallery-column img{
     border-radius: 8px;
-    width: 180px;
+    margin: 5px;
+    width: 300px;
     cursor: pointer;
 }
 
@@ -237,6 +238,10 @@ img.hover-shadow {
         padding-left: 0;
     }
 
+    .movie-info-watchlist span{
+        font-weight: 600;
+    }
+
     .movie-info-block {
         flex-direction: column;
         justify-content: flex-start;
@@ -263,23 +268,58 @@ img.hover-shadow {
         padding-left: 20px;
     }
 
-    .gallery-row {
-        max-width: 350px;
-        margin: 10px;
-    }
-
-    .gallery-column {
-        width: 50%;
-    }
-
     .gallery-column img{
-        width: 150px;
-        height: 100px;
+        width: 45vw;
+        /*height: 100px;*/
     }
 }
 
 @media only screen and (min-width: 481px) and (max-width: 767px) {
+    .movie-info-row {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+    }
 
+    .movie-info-title h1 {
+        font-size: 20px;
+        padding-left: 0;
+    }
+
+    .movie-info-watchlist span{
+        font-weight: 600;
+    }
+
+    .movie-info-block {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .first-column {
+        margin: 0;
+    }
+
+    .movie-info-poster {
+        padding: 0;
+    }
+
+    .movie-overview span {
+        margin: 0 0 10px 20px;
+    }
+
+    .movie-overview p {
+        margin: 15px 10px;
+    }
+
+    .movie-info-gallery span {
+        padding-left: 20px;
+    }
+
+    .gallery-column img {
+        width: 45vw;
+        /*height: 100px;*/
+    }
 
 }
 

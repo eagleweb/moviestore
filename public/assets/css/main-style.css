@@ -312,6 +312,7 @@ footer{
     }
 
     .hidden-menu-ticker:checked ~ .btn-menu {
+        position: fixed;
         right: 170px;
         background-color: #2b343c;
     }
@@ -419,6 +420,7 @@ footer{
     }
 
     .hidden-menu-ticker:checked ~ .btn-menu {
+        position: fixed;
         right: 170px;
         background-color: #2b343c;
     }
