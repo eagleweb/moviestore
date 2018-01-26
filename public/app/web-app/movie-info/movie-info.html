@@ -1,7 +1,7 @@
 <div class="movie-info-container">
     <div class="movie-info-content">
         <div class="search-row movie-info-search-row">
-            <div class="breadcrumbs"><a ui-sref="store({type: '{{movie.data.Type}}', genre: 'all'})" ng-bind="movie.data.Type | uppercase"></a> / <span ng-bind="movie.data.Title"></span></div>
+            <div class="breadcrumbs-info"><a ui-sref="store({type: '{{movie.data.Type}}', genre: 'all'})" ng-bind="movie.data.Type | uppercase"></a> / <span ng-bind="movie.data.Title"></span></div>
             <div class="search">
                 <form ng-submit="movie.Search(searchPhrase)">
                     <input type="text" ng-model="searchPhrase" placeholder="Search movie">
