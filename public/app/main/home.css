@@ -12,8 +12,8 @@
     display: none;
 }
 
-.slide img{
-    max-width: 100%;
+.slide img {
+    width: 100%;
 }
 
 .slide_text {
@@ -32,7 +32,7 @@
     float: left;
 }
 
-.slide_info span{
+.slide_info span {
     font-size: 15px;
     padding-left: 10px;
     color: #d8232a;
@@ -47,7 +47,7 @@
     font-weight: 700
 }
 
-.elem_position:before{
+.elem_position:before {
     content: '';
     margin: 0 3px;
     left: 0;
@@ -164,6 +164,7 @@
 }
 
 .first-row h1{
+    width: 90%;
     font-size: 35px;
     font-weight: 700;
     color: #d8232a;
@@ -172,7 +173,7 @@
 }
 
 .first-row p{
-    max-width: 800px;
+    width: 90%;
     line-height: 20px;
     color: #3f444e;
     text-align: center;

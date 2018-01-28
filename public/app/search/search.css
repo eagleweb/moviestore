@@ -1,3 +1,7 @@
+.search-container {
+    background-color: #edeff0;
+}
+
 .search-container form, .search-message{
     text-align: center;
 }
