@@ -26,11 +26,42 @@
                 <div>Runtime: <span ng-bind="movie.data.Runtime"></span></div>
                 <div>Language: <span ng-bind="movie.data.Language"></span></div>
                 <div>Released: <span ng-bind="movie.data.Released"></span></div>
+                <div class="social-share">
+                    <button class="share-button">
+                    <i class="fa fa-twitter"></i>
+                    <a href="#"
+                       socialshare
+                       socialshare-provider="twitter"
+                       socialshare-text="{{movie.data.Title}}"
+                       socialshare-url="http://moviestore.com/{{movie.data._id}}">
+                        Twitter
+                    </a>
+                    </button>
+                    <button class="share-button">
+                        <i class="fa fa-facebook"></i>
+                        <a href="#"
+                           socialshare
+                           socialshare-provider="facebook"
+                           socialshare-text="{{movie.data.Title}}"
+                           socialshare-url="http://moviestore.com/{{movie.data._id}}">
+                            Facebook
+                        </a>
+                    </button>
+                    <button class="share-button">
+                        <i class="fa fa-google-plus"></i>
+                        <a href="#"
+                           socialshare
+                           socialshare-provider="google"
+                           socialshare-url="http://moviestore.com/{{movie.data._id}}">
+                            Google
+                        </a>
+                    </button>
+                </div>
             </div>
             <div class="second-column">
                 <div class="movie-info-trailer">
                     <video controls>
-                        <source src="" type="video/mp4">
+                        <source src="../../../assets/video/star-wars.mp4" type="video/mp4">
                         Your browser does not support HTML5 video.
                     </video>
                 </div>

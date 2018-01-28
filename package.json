@@ -32,5 +32,8 @@
     "passport-jwt": "^3.0.1",
     "path": "^0.12.7",
     "serve-favicon": "^2.4.5"
+  },
+  "dependencies": {
+    "angular-socialshare": "^2.3.11"
   }
 }

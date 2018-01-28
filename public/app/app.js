@@ -1,5 +1,5 @@
 angular
-    .module('movie-store', ['ui.router', 'angular-jwt'])
+    .module('movie-store', ['ui.router', 'angular-jwt', '720kb.socialshare'])
     .config(config)
     .constant('config', {
         appName: 'MovieStoreApplication',

@@ -104,6 +104,28 @@
     font-style: oblique;
 }
 
+.social-share {
+    margin-top: 20px;
+}
+
+.share-button {
+    background-color: #ffffff;
+    padding: 5px 10px;
+    border-radius: 3px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.share-button:hover {
+    background-color: #989ca4;
+}
+
+.share-button a {
+    text-decoration: none;
+    color: #505050;
+}
+
 .second-column {
     margin-bottom: 20px;
 }
