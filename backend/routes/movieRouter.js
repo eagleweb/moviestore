@@ -10,7 +10,7 @@ movieRouter.route('/')
         var obj = {};
         obj.Type = req.query.type;
         if (req.query.genre !== 'all') {obj.Genre = req.query.genre;}
-        Movie.paginate(obj, {page: +req.query.page, limit: 10}, function (err, result) {
+        Movie.paginate(obj, {page: +req.query.page, limit: 12}, function (err, result) {
             if (err) res.send(err);
             res.json(result);
         });
@@ -49,13 +49,13 @@ movieRouter.route('/sort')
         if (req.query.genre !== 'all') {obj.Genre = req.query.genre;}
         switch (req.query.sort){
             case 'popular':
-                Movie.paginate(obj, {sort: {imdbRating: -1}, page: +req.query.page, limit: 10}, function (err, result) {
+                Movie.paginate(obj, {sort: {imdbRating: -1}, page: +req.query.page, limit: 12}, function (err, result) {
                     if (err) res.send(err);
                     res.json(result);
                 });
                 break;
             case 'date':
-                Movie.paginate(obj, {sort: { Released: -1 }, page: +req.query.page, limit: 10}, function (err, result) {
+                Movie.paginate(obj, {sort: { Released: -1 }, page: +req.query.page, limit: 12}, function (err, result) {
                     if (err) res.send(err);
                         res.json(result);
                     });
@@ -74,6 +74,7 @@ movieRouter.route('/filter')
         if (req.body.language){obj.Language = req.body.language;}
         if (req.body.year) {
             switch (req.body.year){
+                case '2018':
                 case '2017':
                 case '2016':
                 case '2015':
@@ -94,7 +95,7 @@ movieRouter.route('/filter')
                     break;
             }
         }
-        Movie.paginate(obj, {page: +req.body.page, limit: 10}, function (err, result) {
+        Movie.paginate(obj, {page: +req.body.page, limit: 12}, function (err, result) {
             console.log(obj);
             if (err) res.send(err);
             res.json(result);

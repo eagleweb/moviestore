@@ -100,7 +100,7 @@
 
 /* :checked */
 .filter-item input:checked ~ .tab-content {
-    max-height: 10em;
+    max-height: 11em;
 }
 /* Icon */
 .filter-item label::after {
