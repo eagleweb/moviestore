@@ -17,7 +17,6 @@
     "angular": "^1.6.7",
     "angular-jwt": "^0.1.9",
     "angular-ui-router": "^0.4.3",
-    "bcrypt": "^1.0.3",
     "body-parser": "^1.18.2",
     "cors": "^2.8.4",
     "debug": "^3.1.0",
@@ -34,5 +33,8 @@
     "passport-jwt": "^3.0.1",
     "path": "^0.12.7",
     "serve-favicon": "^2.4.5"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3"
   }
 }
